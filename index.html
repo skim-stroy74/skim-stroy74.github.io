@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СКИМ — Строительство и продажа домов</title>
+<meta name="description" content="ООО «СКИМ» — строительство и продажа домов от застройщика с 2014 года. Агаповка, Магнитогорск, оз. Банное, Краснодарский край, Крым. Ипотека от 3%.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="СКИМ — Строительство и продажа домов">
+<meta property="og:description" content="ООО «СКИМ» — строительство и продажа домов от застройщика с 2014 года. Агаповка, Магнитогорск, оз. Банное, Краснодарский край, Крым. Ипотека от 3%.">
+<meta property="og:image" content="https://skim-constructions.netlify.app/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://skim-constructions.netlify.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="СКИМ — Строительство и продажа домов">
+<meta name="twitter:description" content="ООО «СКИМ» — строительство и продажа домов от застройщика с 2014 года. Агаповка, Магнитогорск, оз. Банное, Краснодарский край, Крым.">
+<meta name="twitter:image" content="https://skim-constructions.netlify.app/images/og-image.png">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="images/icon-192.png">
+<meta name="theme-color" content="#12173a">
+<style>
+  :root{
+    --navy:#12173a;
+    --navy-2:#1c2456;
+    --red:#d32f2f;
+    --red-2:#b71c1c;
+    --green:#2e9e4f;
+    --green-2:#227a3c;
+    --bg:#f6f7fb;
+    --text:#1c2233;
+    --muted:#6b7080;
+    --white:#ffffff;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(18,23,58,0.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.5;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1160px;margin:0 auto;padding:0 20px;}
+  section{padding:72px 0;}
+  h1,h2,h3{line-height:1.2;font-weight:800;}
+  h2{font-size:clamp(28px,4vw,38px);color:var(--navy);margin-bottom:12px;}
+  .eyebrow{
+    display:inline-block;color:var(--red);font-weight:700;font-size:13px;
+    letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;
+  }
+  .lead{color:var(--muted);font-size:17px;max-width:640px;margin-bottom:36px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 28px;border-radius:10px;font-weight:700;font-size:15px;
+    cursor:pointer;border:none;transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(211,47,47,.35);}
+  .btn-primary:hover{background:var(--red-2);}
+  .btn-outline{background:#fff;color:var(--navy);border:2px solid var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4);}
+  .btn-ghost:hover{background:rgba(255,255,255,.22);}
+
+  /* SCROLL PROGRESS */
+  .scroll-progress{
+    position:fixed;top:0;left:0;height:3px;background:var(--red);z-index:100;width:0%;
+  }
+
+  /* REVEAL ANIMATION */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.visible{opacity:1;transform:none;}
+  .reveal-stagger.visible > *{opacity:1;transform:none;}
+  .reveal-stagger > *{opacity:0;transform:translateY(20px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal-stagger.visible > *:nth-child(1){transition-delay:.05s;}
+  .reveal-stagger.visible > *:nth-child(2){transition-delay:.12s;}
+  .reveal-stagger.visible > *:nth-child(3){transition-delay:.19s;}
+  .reveal-stagger.visible > *:nth-child(4){transition-delay:.26s;}
+  .reveal-stagger.visible > *:nth-child(5){transition-delay:.33s;}
+  .reveal-stagger.visible > *:nth-child(6){transition-delay:.4s;}
+  .reveal-stagger.visible > *:nth-child(7){transition-delay:.47s;}
+  .reveal-stagger.visible > *:nth-child(8){transition-delay:.54s;}
+  .reveal-stagger.visible > *:nth-child(9){transition-delay:.61s;}
+  .reveal-stagger.visible > *:nth-child(10){transition-delay:.68s;}
+  .reveal-stagger.visible > *:nth-child(11){transition-delay:.75s;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal,.reveal-stagger > *{opacity:1!important;transform:none!important;transition:none!important;}
+  }
+
+  /* HEADER */
+  header{
+    position:sticky;top:0;z-index:50;background:rgba(18,23,58,.96);
+    backdrop-filter:blur(6px);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:20px;}
+  .brand .mark{
+    width:40px;height:40px;border-radius:50%;
+  }
+  .brand .mark img{width:100%;height:100%;object-fit:contain;display:block;}
+  .nav-links{display:flex;gap:22px;list-style:none;}
+  .nav-links a{color:#dfe2f2;font-size:14px;font-weight:600;}
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .nav-phone{color:#fff;font-weight:700;font-size:15px;white-space:nowrap;}
+  .burger{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;}
+  @media (max-width:900px){
+    .nav-links{display:none;}
+    .nav-phone{display:none;}
+    .burger{display:block;}
+  }
+  .mobile-menu{
+    display:none;flex-direction:column;background:var(--navy-2);padding:14px 20px 22px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:#fff;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-weight:600;}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);
+    color:#fff;padding:90px 0 70px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;
+    background:radial-gradient(circle,rgba(211,47,47,.35),transparent 70%);
+  }
+  .hero-inner{position:relative;z-index:1;max-width:680px;}
+  .hero h1{font-size:clamp(32px,5vw,50px);margin-bottom:18px;}
+  .hero h1 em{color:var(--red);font-style:normal;}
+  .hero p{color:#c9cdea;font-size:18px;margin-bottom:30px;max-width:560px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:38px;}
+  .hero-stats{display:flex;flex-wrap:wrap;gap:34px;}
+  .hero-stats div{min-width:120px;}
+  .hero-stats b{display:block;font-size:26px;color:#fff;}
+  .hero-stats span{font-size:13px;color:#aab0d6;}
+  .hero-stats b .counter{font-size:inherit;color:inherit;}
+
+  /* GEO ROUTE MAP */
+  .route-wrap{margin-bottom:36px;}
+  .route-svg{width:100%;height:auto;display:block;overflow:visible;}
+  .route-path{
+    fill:none;stroke:var(--red);stroke-width:3;stroke-linecap:round;
+    stroke-dasharray:1500;stroke-dashoffset:1500;transition:stroke-dashoffset 1.8s ease .1s;
+  }
+  .route-wrap.visible .route-path{stroke-dashoffset:0;}
+  .route-dot{cursor:pointer;}
+  .route-dot .core{
+    fill:var(--navy);stroke:#fff;stroke-width:3;transition:fill .2s ease, r .2s ease;
+    transform-box:fill-box;transform-origin:center;
+  }
+  .route-dot:hover .core, .route-dot:focus .core{fill:var(--red);}
+  .route-dot-main .core{fill:var(--red);r:10;}
+  .route-dot-main .route-label{fill:var(--red);}
+  .route-dot .pulse{fill:none;stroke:var(--red);stroke-width:2;opacity:0;r:8;}
+  .route-wrap.visible .route-dot .pulse{animation:routePulse 2.6s ease-out infinite;}
+  .route-dot:nth-of-type(1) .pulse{animation-delay:.1s;}
+  .route-dot:nth-of-type(2) .pulse{animation-delay:.5s;}
+  .route-dot:nth-of-type(3) .pulse{animation-delay:.9s;}
+  .route-dot:nth-of-type(4) .pulse{animation-delay:1.3s;}
+  .route-dot:nth-of-type(5) .pulse{animation-delay:1.7s;}
+  @keyframes routePulse{
+    0%{r:8;opacity:.55;}
+    100%{r:24;opacity:0;}
+  }
+  .route-label{font-size:14px;font-weight:800;fill:var(--navy);}
+  .route-label-sub{font-size:11px;font-weight:600;fill:var(--muted);}
+  @media (max-width:640px){
+    .route-label{font-size:12px;}
+    .route-label-sub{display:none;}
+  }
+
+  /* GEO */
+  .geo-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;
+  }
+  .geo-card{
+    background:#fff;border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow);
+    border-left:4px solid var(--red);cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .geo-card:hover, .geo-card:focus-visible{
+    transform:translateY(-6px);box-shadow:0 16px 34px rgba(18,23,58,.16);
+  }
+  .geo-card.main{border-left-color:var(--navy);background:var(--navy);color:#fff;}
+  .geo-card.main:hover{box-shadow:0 16px 34px rgba(0,0,0,.35);}
+  .geo-card .icon{
+    width:38px;height:38px;border-radius:10px;background:#fdeceb;color:var(--red);
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1);
+  }
+  .geo-card .icon svg{width:20px;height:20px;overflow:visible;}
+  .geo-card.main .icon{background:rgba(255,255,255,.12);color:#fff;}
+  .geo-card:hover .icon{transform:scale(1.18) rotate(-8deg);}
+
+  /* window lights (building icon) */
+  .geo-card .icon svg circle.window{
+    fill:currentColor;stroke:none;opacity:.2;
+    animation:windowGlow 3.2s ease-in-out infinite;
+  }
+  .geo-card .icon svg circle.window:nth-of-type(1){animation-delay:.1s;}
+  .geo-card .icon svg circle.window:nth-of-type(2){animation-delay:.7s;}
+  .geo-card .icon svg circle.window:nth-of-type(3){animation-delay:1.3s;}
+  .geo-card .icon svg circle.window:nth-of-type(4){animation-delay:1.9s;}
+  .geo-card .icon svg circle.window:nth-of-type(5){animation-delay:2.4s;}
+  .geo-card .icon svg circle.window:nth-of-type(6){animation-delay:.4s;}
+  @keyframes windowGlow{
+    0%,100%{opacity:.2;}
+    50%{opacity:1;}
+  }
+
+  /* door swing (house icon) */
+  .geo-card .icon svg path.door{
+    transition:transform .35s ease;
+    transform-box:fill-box;transform-origin:left bottom;
+  }
+  .geo-card:hover .icon svg path.door{
+    transform:scaleX(.5) skewY(-14deg);
+  }
+  .geo-card h3{font-size:17px;margin-bottom:6px;}
+  .geo-card p{font-size:13px;color:var(--muted);}
+  .geo-card.main p{color:#c9cdea;}
+  .geo-card .tag{
+    display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--red);
+    text-transform:uppercase;letter-spacing:.05em;
+  }
+  .geo-card.main .tag{color:#ff8a80;}
+  .geo-card:not(.main) .tag{color:var(--muted);}
+  .geo-card .cta{
+    display:block;margin-top:10px;font-size:12px;font-weight:700;color:var(--navy);
+    opacity:0;transform:translateX(-4px);transition:opacity .2s ease, transform .2s ease;
+  }
+  .geo-card.main .cta{color:#fff;}
+  .geo-card:hover .cta{opacity:1;transform:none;}
+
+  /* FILTER BAR */
+  .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+  .filter-btn{
+    background:#fff;border:1.5px solid #dfe1ef;color:var(--navy);font-weight:700;font-size:13px;
+    padding:10px 18px;border-radius:999px;cursor:pointer;transition:all .15s ease;
+  }
+  .filter-btn:hover{border-color:var(--red);}
+  .filter-btn.active{background:var(--red);border-color:var(--red);color:#fff;}
+
+  /* LISTINGS CATALOG */
+  .sort-select{
+    background:#fff;border:1.5px solid #dfe1ef;color:var(--navy);font-weight:700;font-size:13px;
+    padding:10px 14px;border-radius:9px;cursor:pointer;
+  }
+  .listings-count{color:var(--muted);font-size:13px;align-self:center;}
+  .listings-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;
+  }
+  .listing-card{
+    background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;
+    display:flex;flex-direction:column;position:relative;transition:transform .2s ease, box-shadow .2s ease;
+    animation:cardIn .35s ease both;
+  }
+  .listing-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(18,23,58,.15);}
+  @keyframes cardIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  .listing-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .listing-city{
+    font-size:11px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.05em;
+  }
+  .listing-hot{
+    background:linear-gradient(135deg,#ff8a00,var(--red));color:#fff;font-size:10.5px;font-weight:800;
+    padding:3px 8px;border-radius:999px;white-space:nowrap;
+  }
+  .listing-addr{font-size:17px;color:var(--navy);margin-bottom:6px;line-height:1.3;}
+  .listing-price{color:var(--red);font-weight:900;font-size:24px;margin-bottom:12px;}
+  .listing-specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+  .listing-specs span{
+    background:var(--bg);color:var(--text);font-size:12px;font-weight:600;
+    padding:5px 9px;border-radius:7px;
+  }
+  .listing-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+  .listing-status{
+    font-size:11px;font-weight:700;padding:4px 9px;border-radius:6px;
+    background:#e9edff;color:var(--navy-2);
+  }
+  .listing-status.is-ready{background:#e3f8e9;color:#1b7a3d;}
+  .finish-badge{font-size:11px;font-weight:700;padding:4px 9px;border-radius:6px;}
+  .finish-rough{background:#fdeceb;color:var(--red-2);}
+  .finish-pre{background:#fff3d6;color:#946200;}
+  .listing-card a.listing-cta{
+    font-size:13px;font-weight:700;color:var(--navy);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .plans-note{margin-top:26px;color:var(--muted);font-size:14px;}
+  .plans-empty{display:none;color:var(--muted);padding:30px 0;text-align:center;}
+
+  /* COMPARE */
+  .compare-check{
+    display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--muted);
+    margin-top:auto;padding-top:12px;cursor:pointer;user-select:none;
+  }
+  .compare-check input{width:16px;height:16px;accent-color:var(--red);cursor:pointer;}
+  .compare-check.disabled{opacity:.4;cursor:not-allowed;}
+  .listing-card a.listing-cta{margin-top:10px;}
+
+  .compare-bar{
+    display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:75;
+    background:var(--navy);color:#fff;border-radius:var(--radius);
+    padding:14px 18px;box-shadow:0 12px 30px rgba(0,0,0,.35);
+    align-items:center;gap:14px;max-width:420px;margin:0 auto;
+  }
+  .compare-bar.show{display:flex;}
+  .compare-bar span{font-size:13px;font-weight:700;flex:1;}
+  .compare-bar .compare-clear{
+    background:none;border:none;color:#aab0d6;font-size:18px;cursor:pointer;padding:4px;
+  }
+  @media (max-width:640px){ .compare-bar{bottom:80px;} }
+
+  .compare-modal{
+    position:fixed;inset:0;background:rgba(10,12,30,.85);z-index:210;
+    display:none;align-items:center;justify-content:center;padding:20px;
+  }
+  .compare-modal.open{display:flex;}
+  .compare-modal-inner{
+    background:#fff;border-radius:var(--radius);padding:26px;max-width:820px;width:100%;
+    max-height:85vh;overflow-y:auto;position:relative;
+  }
+  .compare-modal-inner h3{color:var(--navy);font-size:20px;margin-bottom:18px;}
+  .compare-table-wrap{overflow-x:auto;}
+  #compareTable{width:100%;border-collapse:collapse;min-width:480px;}
+  #compareTable th, #compareTable td{
+    padding:10px 12px;border-bottom:1px solid #eef0f7;font-size:13px;text-align:left;white-space:nowrap;
+  }
+  #compareTable th{color:var(--navy);font-size:13px;position:relative;}
+  #compareTable td:first-child, #compareTable th:first-child{
+    color:var(--muted);font-weight:700;position:sticky;left:0;background:#fff;white-space:nowrap;
+  }
+  #compareTable .compare-remove{
+    background:none;border:none;color:var(--red);cursor:pointer;font-size:12px;font-weight:700;
+    padding:0;margin-bottom:8px;display:block;
+  }
+  .compare-head-row td{border-bottom:2px solid var(--navy);vertical-align:top;}
+  .compare-obj{display:flex;flex-direction:column;gap:3px;}
+  .compare-city{
+    font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);
+  }
+  .compare-addr{font-size:15px;font-weight:800;color:var(--navy);white-space:normal;}
+  #compareTable .compare-price{color:var(--red);font-weight:800;font-size:16px;}
+  .compare-best{
+    display:inline-block;margin-left:8px;background:var(--green);color:#fff;
+    font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
+    padding:3px 8px;border-radius:20px;vertical-align:2px;
+  }
+  #compareTable td.diff{background:#fff8e6;}
+  .compare-cta-row td, .compare-cta-row th{border-bottom:none;padding-top:16px;}
+  .compare-pick{
+    background:var(--red);color:#fff;border:none;border-radius:9px;cursor:pointer;
+    font-weight:700;font-size:13px;padding:10px 16px;transition:background .15s ease;
+  }
+  .compare-pick:hover{background:var(--red-2);}
+
+  /* MINI CTA */
+  .mini-cta{
+    background:#fff;border:2px dashed #dfe1ef;border-radius:var(--radius);
+    padding:26px 28px;margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;
+    justify-content:space-between;gap:18px;
+  }
+  .mini-cta-text h3{color:var(--navy);font-size:18px;margin-bottom:4px;}
+  .mini-cta-text p{color:var(--muted);font-size:14px;}
+  .mini-cta-form{display:flex;flex-wrap:wrap;gap:10px;}
+  .mini-cta-form input{
+    padding:12px 14px;border-radius:9px;border:1.5px solid #dfe1ef;font-size:14px;
+    min-width:180px;
+  }
+  .mini-cta-form input:focus{outline:none;border-color:var(--red);}
+
+  /* MORTGAGE */
+  .mort-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+  .mort-card{
+    background:#fff;border-radius:var(--radius);padding:26px 22px;box-shadow:var(--shadow);
+    text-align:center;
+  }
+  .mort-card .rate{font-size:38px;font-weight:900;color:var(--red);}
+  .mort-card .rate span{font-size:18px;}
+  .mort-card h3{color:var(--navy);font-size:16px;margin:8px 0 6px;}
+  .mort-card p{font-size:13px;color:var(--muted);}
+  .mort-price{
+    margin-top:30px;background:var(--navy);color:#fff;border-radius:var(--radius);
+    padding:22px 26px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+  }
+  .mort-price b{font-size:22px;}
+  .mort-price span{color:#c9cdea;font-size:14px;}
+
+  /* TRUST */
+  .trust{background:var(--navy);color:#fff;}
+  .trust h2{color:#fff;}
+  .trust .lead{color:#c9cdea;}
+  .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;}
+  .trust-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--radius);padding:22px 20px;
+  }
+  .trust-card .num{color:var(--red);font-weight:900;font-size:26px;margin-bottom:8px;}
+  .trust-card h3{font-size:16px;margin-bottom:6px;}
+  .trust-card p{font-size:13px;color:#c9cdea;}
+
+  /* FOUNDERS */
+  .founders{margin-top:56px;}
+  .founders-title{font-size:20px;color:#fff;margin-bottom:22px;font-weight:800;}
+  .founders-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+  .founder-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+    border-radius:var(--radius);padding:24px;display:flex;gap:16px;align-items:flex-start;
+  }
+  .founder-avatar{
+    width:56px;height:56px;border-radius:50%;background:var(--red);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;
+    flex-shrink:0;
+  }
+  .founder-card h4{font-size:16px;margin-bottom:2px;}
+  .founder-card .role{font-size:12px;color:#ff8a80;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  .founder-card p{font-size:13.5px;color:#c9cdea;}
+
+  /* GALLERY */
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  }
+  .gallery-grid a{
+    display:block;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#e7e9f4;
+    position:relative;cursor:zoom-in;
+  }
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;}
+  .gallery-grid a:hover img{transform:scale(1.06);}
+  @media (max-width:760px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  }
+
+  /* LIGHTBOX */
+  .lightbox{
+    position:fixed;inset:0;background:rgba(10,12,30,.94);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%;max-height:85vh;border-radius:8px;object-fit:contain;}
+  .lightbox-close{
+    position:absolute;top:20px;right:24px;background:rgba(255,255,255,.12);color:#fff;
+    border:none;width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer;
+  }
+  .lightbox-nav{
+    position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);
+    color:#fff;border:none;width:50px;height:50px;border-radius:50%;font-size:22px;cursor:pointer;
+  }
+  .lightbox-prev{left:20px;}
+  .lightbox-next{right:20px;}
+  @media (max-width:600px){
+    .lightbox{padding:16px;}
+    .lightbox-nav{width:40px;height:40px;font-size:18px;}
+  }
+
+  /* VIDEO */
+  .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:680px;}
+  .video-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+  .video-card video{width:100%;aspect-ratio:9/16;background:#000;object-fit:cover;}
+  .video-card .video-caption{padding:14px 16px;font-size:13.5px;color:var(--muted);font-weight:600;}
+
+  /* REVIEWS */
+  .reviews-wrap{position:relative;}
+  .reviews-scroll{
+    display:flex;gap:18px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+  }
+  .review-card{
+    scroll-snap-align:start;flex:0 0 280px;background:#fff;border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow);
+  }
+  .review-card .stars{color:#f5b301;font-size:14px;margin-bottom:8px;}
+  .review-card h4{font-size:15px;color:var(--navy);margin-bottom:2px;}
+  .review-card .date{font-size:12px;color:var(--muted);margin-bottom:10px;}
+  .review-card p{font-size:13.5px;color:#3a3f55;}
+  .reviews-more{text-align:center;margin-top:26px;}
+  .reviews-nav{
+    position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;
+    background:#fff;box-shadow:var(--shadow);border:none;font-size:18px;color:var(--navy);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;z-index:5;
+  }
+  .reviews-prev{left:-14px;}
+  .reviews-next{right:-14px;}
+  @media (max-width:600px){.reviews-nav{display:none;}}
+
+  /* CONTACT */
+  .contact{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;
+  }
+  .contact h2{color:#fff;}
+  .contact .lead{color:#c9cdea;}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start;}
+  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-form{
+    background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);
+  }
+  .contact-form label{display:block;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+  .contact-form input{
+    width:100%;padding:13px 14px;border-radius:9px;border:1.5px solid #dfe1ef;
+    font-size:15px;margin-bottom:16px;color:var(--text);
+  }
+  .contact-form input:focus{outline:none;border-color:var(--red);}
+  .contact-form .btn{width:100%;}
+  .contact-alt{display:flex;flex-direction:column;gap:14px;}
+  .contact-alt a.btn{width:100%;}
+  .contact-info{margin-top:28px;}
+  .contact-info div{margin-bottom:14px;font-size:14px;color:#c9cdea;}
+  .contact-info b{color:#fff;display:block;font-size:15px;}
+  .map-embed{
+    margin-top:20px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+    background:#1c2456;
+  }
+  .map-embed iframe{width:100%;height:220px;border:0;display:block;}
+  .map-embed .map-link{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px;background:#fff;color:var(--navy);font-size:13px;font-weight:700;
+  }
+  .map-embed .map-link:hover{background:#f0f1f6;}
+  #form-status,#mini-form-status{font-size:13px;margin-top:-6px;margin-bottom:14px;min-height:16px;}
+  .city-badge{
+    display:flex;align-items:center;gap:8px;background:#fdeceb;color:var(--red-2);
+    font-size:13px;font-weight:700;padding:9px 12px;border-radius:9px;margin-bottom:16px;
+  }
+  .city-badge b{font-weight:800;}
+  .city-badge button{
+    margin-left:auto;background:none;border:none;color:var(--red-2);cursor:pointer;
+    font-size:14px;font-weight:900;line-height:1;padding:2px 4px;
+  }
+
+  /* FOOTER */
+  footer{background:#0c0f28;color:#8b90b8;padding:36px 0 44px;font-size:13px;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;}
+  footer b{color:#fff;}
+  footer .cols{display:flex;gap:40px;flex-wrap:wrap;}
+
+  /* FLOATING ACTIONS */
+  .floating-actions{
+    position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:12px;z-index:60;
+  }
+  .floating-actions a{
+    width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:22px;box-shadow:0 8px 22px rgba(18,23,58,.3);transition:transform .15s ease;
+  }
+  .floating-actions a:hover{transform:scale(1.08);}
+  .floating-actions a svg{width:24px;height:24px;}
+  .fab-call{background:var(--green);color:#fff;}
+  .fab-tg{background:#2AABEE;color:#fff;}
+  .fab-vk{background:#0077FF;color:#fff;}
+  .fab-max{background:#5B48F0;overflow:hidden;}
+  .fab-max img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  @media (max-width:600px){
+    .floating-actions{right:14px;bottom:14px;}
+    .floating-actions a{width:46px;height:46px;font-size:19px;}
+    .floating-actions a svg{width:20px;height:20px;}
+  }
+
+  /* PROCESS STEPS */
+  .steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  @media (max-width:900px){.steps-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.steps-grid{grid-template-columns:1fr;}}
+  .step-card{background:var(--bg);border-radius:var(--radius);padding:22px 18px;}
+  .step-num{
+    width:38px;height:38px;border-radius:50%;background:var(--red);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;margin-bottom:14px;
+  }
+  .step-card h3{font-size:15px;color:var(--navy);margin-bottom:6px;}
+  .step-card p{font-size:13px;color:var(--muted);}
+
+  /* BANK PARTNERS */
+  .banks-row{
+    margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;
+  }
+  .banks-label{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:14px;display:block;}
+  .banks-list{display:flex;flex-wrap:wrap;gap:14px;}
+  .bank-card{
+    background:#fff;border:1.5px solid #dfe1ef;border-radius:12px;
+    padding:14px 20px;display:flex;align-items:center;gap:13px;
+    box-shadow:0 4px 14px rgba(18,23,58,.05);
+  }
+  .bank-card svg{flex-shrink:0;}
+  .bank-card img{flex-shrink:0;object-fit:contain;}
+  .bank-card .bank-name{font-weight:800;font-size:16px;color:var(--navy);line-height:1.25;}
+  .bank-card .bank-sub{font-size:11px;color:var(--muted);font-weight:600;}
+  @media (max-width:600px){
+    .bank-card{padding:11px 15px;gap:10px;}
+    .bank-card .bank-name{font-size:14px;}
+  }
+
+  /* MORTGAGE CALCULATOR */
+  .calc-box{
+    background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;
+    margin-top:30px;
+  }
+  .calc-box h3{color:var(--navy);font-size:18px;margin-bottom:20px;}
+  .calc-row{margin-bottom:18px;}
+  .calc-row label{
+    display:flex;justify-content:space-between;font-size:13px;font-weight:700;color:var(--navy);
+    margin-bottom:8px;
+  }
+  .calc-row input[type=range]{width:100%;accent-color:var(--red);}
+  .calc-result{
+    background:var(--navy);color:#fff;border-radius:var(--radius);padding:20px 22px;
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:20px 0;
+  }
+  .calc-result span{font-size:13px;color:#c9cdea;}
+  .calc-result b{font-size:30px;}
+  .calc-result .calc-rate{margin-left:auto;font-size:12px;}
+
+  /* FAQ */
+  .faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px;}
+  .faq-item{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+  .faq-item summary{
+    padding:18px 20px;font-weight:700;color:var(--navy);cursor:pointer;list-style:none;
+    display:flex;align-items:center;justify-content:space-between;font-size:15px;gap:14px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:'+';font-size:22px;color:var(--red);font-weight:400;transition:transform .2s ease;
+    flex-shrink:0;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{padding:0 20px 20px;color:var(--muted);font-size:14px;line-height:1.6;}
+
+
+  /* INSTALL APP BANNER */
+  .install-banner{
+    display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:80;
+    background:var(--navy);color:#fff;border-radius:var(--radius);
+    padding:16px 18px;box-shadow:0 12px 30px rgba(0,0,0,.35);
+    align-items:center;gap:14px;max-width:420px;margin:0 auto;
+  }
+  .install-banner.show{display:flex;}
+  .install-banner img{width:40px;height:40px;border-radius:10px;flex-shrink:0;}
+  .install-banner .txt{flex:1;}
+  .install-banner .txt b{display:block;font-size:14px;}
+  .install-banner .txt span{font-size:12px;color:#c9cdea;}
+  .install-banner button{white-space:nowrap;}
+  .install-banner .install-close{
+    background:none;border:none;color:#aab0d6;font-size:18px;cursor:pointer;padding:4px;
+  }
+
+  /* PDF PROPOSAL (print-only) */
+  .print-proposal{display:none;}
+  @media print{
+    body *{visibility:hidden;}
+    .print-proposal, .print-proposal *{visibility:visible;}
+    .print-proposal{
+      display:block;position:absolute;top:0;left:0;width:100%;padding:20px;
+    }
+    .print-proposal .p-header{display:flex;align-items:center;gap:14px;border-bottom:3px solid #12173a;padding-bottom:16px;margin-bottom:24px;}
+    .print-proposal .p-header img{width:56px;height:56px;}
+    .print-proposal .p-header h1{font-size:20px;color:#12173a;}
+    .print-proposal .p-header span{font-size:12px;color:#666;}
+    .print-proposal h2{font-size:16px;color:#12173a;margin-bottom:14px;}
+    .print-proposal table{width:100%;border-collapse:collapse;margin-bottom:24px;}
+    .print-proposal td{padding:10px 4px;border-bottom:1px solid #ddd;font-size:14px;}
+    .print-proposal td:first-child{color:#666;}
+    .print-proposal td:last-child{text-align:right;font-weight:700;color:#12173a;}
+    .print-proposal .p-total{background:#f6f7fb;padding:16px;border-radius:8px;margin-bottom:24px;}
+    .print-proposal .p-total b{font-size:26px;color:#d32f2f;}
+    .print-proposal .p-footer{font-size:12px;color:#666;border-top:1px solid #ddd;padding-top:14px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header>
+  <nav class="nav container">
+    <a href="#hero" class="brand">
+      <span class="mark"><img src="images/logo.png" alt="СКИМ"></span>
+      СКИМ
+    </a>
+    <ul class="nav-links">
+      <li><a href="#plans">Объекты</a></li>
+      <li><a href="#mortgage">Ипотека</a></li>
+      <li><a href="#process">Как купить</a></li>
+      <li><a href="#trust">О компании</a></li>
+      <li><a href="#faq">Вопросы</a></li>
+      <li><a href="#gallery">Дома</a></li>
+      <li><a href="#video">Видео</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+79128058002">+7 (912) 805-80-02</a>
+      <button class="burger" id="burgerBtn" aria-label="Меню">☰</button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#plans">Объекты</a>
+    <a href="#mortgage">Ипотека</a>
+    <a href="#process">Как купить</a>
+    <a href="#trust">О компании</a>
+    <a href="#faq">Вопросы</a>
+    <a href="#gallery">Дома</a>
+    <a href="#video">Видео</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contact">Контакты</a>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="container hero-inner">
+    <div class="eyebrow" style="color:#ff8a80">Строительная компания с 2014 года</div>
+    <h1>Строим дома от <em>Урала до Крыма</em></h1>
+    <p>Более 40 домов, дуплексов и квартир в продаже прямо сейчас — в Агаповке и Магнитогорске, с гарантией и ипотекой от 3%. А ещё строим и ремонтируем на озере Банное, в Краснодарском крае и Крыму.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Оставить заявку</a>
+      <a href="tel:+79128058002" class="btn btn-ghost">Позвонить: +7 (912) 805-80-02</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>с 2014</b><span>на рынке строительства</span></div>
+      <div><b><span class="counter" data-target="300">0</span>+</b><span>семей уже живут в наших домах</span></div>
+      <div><b>от <span class="counter" data-target="3">0</span>%</b><span>ипотека на новый дом</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="geo">
+  <div class="container">
+    <div class="eyebrow">География</div>
+    <h2>Где мы строим</h2>
+    <p class="lead">В Агаповке и Магнитогорске мы застройщик — продаём готовые дома, дуплексы и квартиры «под ключ». В остальных регионах строим и ремонтируем по индивидуальным и муниципальным проектам. Нажмите на город — оставите заявку сразу с нужным регионом.</p>
+
+    <div class="route-wrap reveal">
+      <svg class="route-svg" viewBox="0 0 1000 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path class="route-path" d="M60,140 C150,110 200,90 290,90 C380,90 420,140 500,160 C580,180 630,120 710,100 C790,80 860,120 940,140"/>
+
+        <g class="route-dot route-dot-main" tabindex="0" role="button" data-city="с. Агаповка" aria-label="с. Агаповка — застройщик">
+          <circle class="pulse" cx="60" cy="140"/>
+          <circle class="core" cx="60" cy="140" r="10"/>
+          <text class="route-label" x="60" y="182" text-anchor="middle">Агаповка</text>
+          <text class="route-label-sub" x="60" y="198" text-anchor="middle">застройщик</text>
+        </g>
+
+        <g class="route-dot route-dot-main" tabindex="0" role="button" data-city="Магнитогорск" aria-label="Магнитогорск — в продаже">
+          <circle class="pulse" cx="290" cy="90"/>
+          <circle class="core" cx="290" cy="90" r="10"/>
+          <text class="route-label" x="290" y="58" text-anchor="middle">Магнитогорск</text>
+          <text class="route-label-sub" x="290" y="74" text-anchor="middle">в продаже</text>
+        </g>
+
+        <g class="route-dot" tabindex="0" role="button" data-city="оз. Банное" aria-label="оз. Банное">
+          <circle class="pulse" cx="500" cy="160"/>
+          <circle class="core" cx="500" cy="160" r="8"/>
+          <text class="route-label" x="500" y="202" text-anchor="middle">оз. Банное</text>
+        </g>
+
+        <g class="route-dot" tabindex="0" role="button" data-city="Краснодарский край" aria-label="Краснодарский край">
+          <circle class="pulse" cx="710" cy="100"/>
+          <circle class="core" cx="710" cy="100" r="8"/>
+          <text class="route-label" x="710" y="72" text-anchor="middle">Краснодарский край</text>
+        </g>
+
+        <g class="route-dot" tabindex="0" role="button" data-city="Крым" aria-label="Крым">
+          <circle class="pulse" cx="940" cy="140"/>
+          <circle class="core" cx="940" cy="140" r="8"/>
+          <text class="route-label" x="940" y="182" text-anchor="middle">Крым</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="geo-grid reveal-stagger">
+      <div class="geo-card main" data-city="с. Агаповка" tabindex="0" role="button">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path class="door" d="M9 20v-6h6v6"/></svg></div>
+        <h3>с. Агаповка</h3>
+        <p>Микрорайоны Тепличный, Солнечный, Юго-Западный, Садовый — продажа домов от застройщика, ипотека от 3%</p>
+        <span class="tag">Готовые дома в продаже</span>
+        <span class="cta">Оставить заявку →</span>
+      </div>
+      <div class="geo-card" data-city="Магнитогорск" tabindex="0" role="button">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path class="door" d="M9 20v-6h6v6"/></svg></div>
+        <h3>Магнитогорск</h3>
+        <p>Продажа домов от застройщика, 14 объектов в наличии</p>
+        <span class="tag">Готовые дома в продаже</span>
+        <span class="cta">Оставить заявку →</span>
+      </div>
+      <div class="geo-card" data-city="оз. Банное" tabindex="0" role="button">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="9" y1="22" x2="9" y2="14"/><line x1="15" y1="22" x2="15" y2="14"/><line x1="9" y1="14" x2="15" y2="14"/><circle class="window" cx="8" cy="6" r=".5"/><circle class="window" cx="12" cy="6" r=".5"/><circle class="window" cx="16" cy="6" r=".5"/><circle class="window" cx="8" cy="10" r=".5"/><circle class="window" cx="12" cy="10" r=".5"/><circle class="window" cx="16" cy="10" r=".5"/></svg></div>
+        <h3>оз. Банное</h3>
+        <p>Строительство домов в курортной зоне</p>
+        <span class="tag">Строительство и ремонт</span>
+        <span class="cta">Оставить заявку →</span>
+      </div>
+      <div class="geo-card" data-city="Краснодарский край" tabindex="0" role="button">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="9" y1="22" x2="9" y2="14"/><line x1="15" y1="22" x2="15" y2="14"/><line x1="9" y1="14" x2="15" y2="14"/><circle class="window" cx="8" cy="6" r=".5"/><circle class="window" cx="12" cy="6" r=".5"/><circle class="window" cx="16" cy="6" r=".5"/><circle class="window" cx="8" cy="10" r=".5"/><circle class="window" cx="12" cy="10" r=".5"/><circle class="window" cx="16" cy="10" r=".5"/></svg></div>
+        <h3>Краснодарский край</h3>
+        <p>География строительства</p>
+        <span class="tag">Строительство и ремонт</span>
+        <span class="cta">Оставить заявку →</span>
+      </div>
+      <div class="geo-card" data-city="Крым" tabindex="0" role="button">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="9" y1="22" x2="9" y2="14"/><line x1="15" y1="22" x2="15" y2="14"/><line x1="9" y1="14" x2="15" y2="14"/><circle class="window" cx="8" cy="6" r=".5"/><circle class="window" cx="12" cy="6" r=".5"/><circle class="window" cx="16" cy="6" r=".5"/><circle class="window" cx="8" cy="10" r=".5"/><circle class="window" cx="12" cy="10" r=".5"/><circle class="window" cx="16" cy="10" r=".5"/></svg></div>
+        <h3>Крым</h3>
+        <p>География строительства</p>
+        <span class="tag">Строительство и ремонт</span>
+        <span class="cta">Оставить заявку →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plans" style="background:#fff">
+  <div class="container">
+    <div class="eyebrow">Каталог · Обновляется еженедельно</div>
+    <h2>Дома в продаже прямо сейчас</h2>
+    <p class="lead">Реальные объекты в Агаповке и Магнитогорске — с адресом, ценой и сроком готовности. Все подходят под льготную ипотеку.</p>
+
+    <div class="filter-bar" id="listingFilters">
+      <button class="filter-btn active" data-filter="all">Все города</button>
+      <button class="filter-btn" data-filter="city:Агаповка">Агаповка</button>
+      <button class="filter-btn" data-filter="city:Магнитогорск">Магнитогорск</button>
+      <button class="filter-btn" data-filter="hot">🔥 Горячие предложения</button>
+      <button class="filter-btn" data-filter="ready">Готовы сейчас</button>
+      <button class="filter-btn" data-filter="garage">С гаражом</button>
+    </div>
+    <div class="filter-bar" style="margin-bottom:12px;">
+      <select id="listingSort" class="sort-select">
+        <option value="default">Сортировка: по умолчанию</option>
+        <option value="price-asc">Сначала дешевле</option>
+        <option value="price-desc">Сначала дороже</option>
+      </select>
+      <span class="listings-count" id="listingsCount"></span>
+    </div>
+
+    <div class="listings-grid" id="listingsGrid"></div>
+    <p class="plans-empty" id="plansEmpty">По этому фильтру пока нет вариантов — уточните у нас напрямую, подберём индивидуально.</p>
+    <div style="text-align:center;margin-top:26px;">
+      <button class="btn btn-outline" id="listingsMore">Показать ещё объекты</button>
+    </div>
+    <p class="plans-note">Отделка и точный срок сдачи указаны по каждому объекту отдельно — актуальность цен и наличие уточняйте у менеджера при заявке.</p>
+
+    <div class="mini-cta reveal">
+      <div class="mini-cta-text">
+        <h3>Не нашли подходящий вариант?</h3>
+        <p>Оставьте телефон — подберём объект под ваш бюджет и участок</p>
+      </div>
+      <form class="mini-cta-form" id="miniForm">
+        <input type="tel" id="miniPhone" placeholder="+7 (___) ___-__-__" required>
+        <button type="submit" class="btn btn-primary">Оставить телефон</button>
+      </form>
+    </div>
+    <div id="mini-form-status"></div>
+  </div>
+</section>
+
+<section id="mortgage">
+  <div class="container">
+    <div class="eyebrow">Финансирование</div>
+    <h2>Ипотека от 3%</h2>
+    <p class="lead">Дома и квартиры в Агаповке и Магнитогорске можно оформить по льготным программам.</p>
+    <div class="mort-grid reveal-stagger">
+      <div class="mort-card"><div class="rate">3<span>%</span></div><h3>Сельская ипотека</h3><p>Для домов в с. Агаповка</p></div>
+      <div class="mort-card"><div class="rate">3<span>%</span></div><h3>Семейная ипотека</h3><p>Для семей с детьми</p></div>
+      <div class="mort-card"><div class="rate">3<span>%</span></div><h3>IT-ипотека</h3><p>Для сотрудников аккредитованных IT-компаний</p></div>
+    </div>
+    <div class="mort-price reveal">
+      <div><b>Дома и квартиры от 3,2 млн ₽</b><br><span>Точная цена и отделка — по каждому объекту в каталоге</span></div>
+      <a href="#plans" class="btn btn-primary">Смотреть каталог</a>
+    </div>
+
+    <div class="banks-row reveal">
+      <span class="banks-label">Оформляем ипотеку с банками-партнёрами:</span>
+      <div class="banks-list">
+        <div class="bank-card">
+          <img src="images/bank-kub.png" alt="Кредит Урал Банк" width="36" height="36">
+          <div>
+            <div class="bank-name">Кредит Урал Банк</div>
+            <div class="bank-sub">Группа Газпромбанка</div>
+          </div>
+        </div>
+        <div class="bank-card">
+          <img src="images/bank-sber.png" alt="СберБанк" width="36" height="36">
+          <div class="bank-name">СберБанк</div>
+        </div>
+        <div class="bank-card">
+          <img src="images/bank-vtb.png" alt="ВТБ" width="38" height="28">
+          <div class="bank-name">ВТБ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-box reveal">
+      <h3>Рассчитайте платёж по ипотеке</h3>
+      <div class="calc-row">
+        <label><span>Стоимость объекта</span><b id="calcPriceOut">8 000 000 ₽</b></label>
+        <input type="range" id="calcPrice" min="3000000" max="15000000" step="100000" value="8000000">
+      </div>
+      <div class="calc-row">
+        <label><span>Первоначальный взнос</span><b id="calcDownOut">20% (1 380 000 ₽)</b></label>
+        <input type="range" id="calcDown" min="10" max="50" step="5" value="20">
+      </div>
+      <div class="calc-row">
+        <label><span>Срок ипотеки</span><b id="calcYearsOut">20 лет</b></label>
+        <input type="range" id="calcYears" min="5" max="30" step="1" value="20">
+      </div>
+      <div class="calc-result">
+        <span>Платёж в месяц:</span>
+        <b id="calcMonthly">0 ₽</b>
+        <span class="calc-rate">при ставке 3%</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <a href="#contact" class="btn btn-primary">Оставить заявку на расчёт</a>
+        <button type="button" id="downloadProposal" class="btn btn-outline">📄 Скачать моё предложение</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="background:#fff">
+  <div class="container">
+    <div class="eyebrow">Как это работает</div>
+    <h2>Путь от заявки до ключей</h2>
+    <p class="lead">Пять простых шагов — без лишней бюрократии и без беготни между отделами.</p>
+    <div class="steps-grid reveal-stagger">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Заявка</h3>
+        <p>Оставляете телефон на сайте или звоните напрямую</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Подбор дома</h3>
+        <p>Владимир или Денис лично помогают выбрать планировку и участок</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Договор и ипотека</h3>
+        <p>Оформляем сделку, помогаем с ипотекой от 3%</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Строительство</h3>
+        <p>Показываем все этапы: фото, видео, при желании — личное присутствие</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <h3>Ключи</h3>
+        <p>Дом с официальной гарантией — уровень отделки по каждому объекту свой</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust" id="trust">
+  <div class="container">
+    <div class="eyebrow" style="color:#ff8a80">О компании</div>
+    <h2>Почему выбирают «СКИМ»</h2>
+    <p class="lead">ООО «СКИМ» строит жилые и нежилые здания с 2014 года. В наших домах уже живут более 300 семей на территории Агаповского района, Магнитогорска, оз. Банное, Краснодарского края и Крыма.</p>
+    <div class="trust-grid reveal-stagger">
+      <div class="trust-card"><div class="num">01</div><h3>Собственники на связи лично</h3><p>Сделки лично сопровождают совладельцы компании — Владимир и Денис Миронковы, а не обезличенный отдел продаж.</p></div>
+      <div class="trust-card"><div class="num">02</div><h3>Прозрачность стройки</h3><p>Показываем все этапы строительства: фото, видео, при желании — личное присутствие на объекте.</p></div>
+      <div class="trust-card"><div class="num">03</div><h3>Выбор отделки под себя</h3><p>Двери, обои, кафель, ламинат, сантехника — подбираете сами на этапе строительства.</p></div>
+      <div class="trust-card"><div class="num">04</div><h3>Гарантия на дом</h3><p>Даём официальную гарантию на построенный дом.</p></div>
+      <div class="trust-card"><div class="num">05</div><h3>Опыт муниципальных проектов</h3><p>Строим и ремонтируем соцобъекты: дома для медработников и детей-сирот, детские сады, инженерные сети — по контрактам с районами области.</p></div>
+      <div class="trust-card"><div class="num">06</div><h3>Своя спецтехника</h3><p>Экскаваторы, бульдозеры, краны, самосвалы и другая техника — без привлечения подрядчиков со стороны.</p></div>
+    </div>
+
+    <div class="founders reveal">
+      <div class="founders-title">Кто стоит за компанией</div>
+      <div class="founders-grid">
+        <div class="founder-card">
+          <div class="founder-avatar">ВМ</div>
+          <div>
+            <h4>Владимир Миронков</h4>
+            <div class="role">Совладелец компании</div>
+            <p>Отвечает за качество строительства и сроки — клиенты отдельно благодарят за оперативность на каждом этапе стройки.</p>
+          </div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-avatar">ДМ</div>
+          <div>
+            <h4>Денис Миронков</h4>
+            <div class="role">Совладелец компании</div>
+            <p>Лично сопровождает сделки от первого звонка до получения ключей. По отзывам клиентов — один из самых отзывчивых людей в команде.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:#fff">
+  <div class="container">
+    <div class="eyebrow">Вопросы</div>
+    <h2>Отвечаем заранее</h2>
+    <p class="lead">Собрали то, что чаще всего спрашивают до заявки.</p>
+    <div class="faq-list reveal-stagger">
+      <details class="faq-item">
+        <summary>Какие есть варианты ипотеки?</summary>
+        <p>Сельская, семейная и IT-ипотека от 3% — оформляем прямо при покупке дома в Агаповке. Поможем разобраться, какая программа подходит именно вам.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Что входит в стоимость дома?</summary>
+        <p>Зависит от объекта — в каталоге у каждого дома указан уровень отделки (чистовая, предчистовая или черновая). На готовых объектах с чистовой отделкой доступен выбор дверей, обоев, кафеля, ламината и сантехники.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Даёте ли вы гарантию на дом?</summary>
+        <p>Да, официальную гарантию на построенный дом — прописываем это в договоре.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Можно ли следить за стройкой?</summary>
+        <p>Да, показываем все этапы строительства: фото и видео с объекта, а при желании — личное присутствие прямо на площадке.</p>
+      </details>
+      <details class="faq-item">
+        <summary>В каких регионах вы работаете?</summary>
+        <p>Продаём готовые дома, дуплексы и квартиры от застройщика в Агаповке и Магнитогорске. Также строим и ремонтируем на озере Банное, в Краснодарском крае и Крыму.</p>
+      </details>
+      <details class="faq-item">
+        <summary>С кем я буду общаться по сделке?</summary>
+        <p>Лично с совладельцами компании — Владимиром и Денисом Миронковыми, без обезличенного отдела продаж.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="background:#fff">
+  <div class="container">
+    <div class="eyebrow">Наши объекты</div>
+    <h2>Как выглядят наши дома</h2>
+    <p class="lead">Реальные фото готовых домов — снаружи и внутри. Нажмите на фото, чтобы увеличить.</p>
+    <div class="gallery-grid reveal-stagger" id="galleryGrid">
+      <a href="images/house-02.jpg"><img src="images/house-02.jpg" alt="Ряд домов на этапе строительства" loading="lazy"></a>
+      <a href="images/house-04.jpg"><img src="images/house-04.jpg" alt="Дом на этапе отделки фасада" loading="lazy"></a>
+      <a href="images/house-05.jpg"><img src="images/house-05.jpg" alt="Дом зимой" loading="lazy"></a>
+      <a href="images/house-06.jpg"><img src="images/house-06.jpg" alt="Коридор с отделкой" loading="lazy"></a>
+      <a href="images/house-07.jpg"><img src="images/house-07.jpg" alt="Гостиная со вторым светом" loading="lazy"></a>
+      <a href="images/house-08.jpg"><img src="images/house-08.jpg" alt="Интерьер комнаты, плитка и обои" loading="lazy"></a>
+      <a href="images/house-09.jpg"><img src="images/house-09.jpg" alt="Интерьер комнаты, ламинат и обои" loading="lazy"></a>
+      <a href="images/house-10.jpg"><img src="images/house-10.jpg" alt="Готовый санузел" loading="lazy"></a>
+      <a href="images/house-11.jpg"><img src="images/house-11.jpg" alt="Кухня-гостиная, чистовая отделка" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Закрыть">✕</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Предыдущее">←</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Следующее">→</button>
+</div>
+
+<section id="video">
+  <div class="container">
+    <div class="eyebrow">Видео</div>
+    <h2>Смотрите вживую</h2>
+    <p class="lead">Короткие ролики с готовых объектов — интерьер и фасад.</p>
+    <div class="video-grid reveal-stagger">
+      <div class="video-card">
+        <video controls preload="none" poster="videos/poster-01.jpg" playsinline>
+          <source src="videos/video-01.mp4" type="video/mp4">
+        </video>
+        <div class="video-caption">Обзор интерьера — чистовая отделка</div>
+      </div>
+      <div class="video-card">
+        <video controls preload="none" poster="videos/poster-02.jpg" playsinline>
+          <source src="videos/video-02.mp4" type="video/mp4">
+        </video>
+        <div class="video-caption">Готовый двухэтажный дом снаружи</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:#fff">
+  <div class="container">
+    <div class="eyebrow">Отзывы</div>
+    <h2>Что говорят клиенты</h2>
+    <p class="lead">10 отзывов с оценкой 5 из 5 — из карточки компании в 2ГИС.</p>
+    <div class="reviews-wrap">
+      <button class="reviews-nav reviews-prev" id="reviewsPrev" aria-label="Назад">←</button>
+      <div class="reviews-scroll" id="reviewsScroll">
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Михаил Афанасьев</h4><div class="date">21 апреля 2025</div><p>Отличная компания, индивидуальный подход к каждому клиенту. Отличные условия для покупки. Качественные дома, с отличным ремонтом.</p></div>
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Е В</h4><div class="date">28 апреля 2025</div><p>Хочу выразить огромную благодарность строительной компании «СКИМ» за отличную работу! Выполнили строительство дома в срок и в соответствии со всеми пожеланиями. Особенно хочется поблагодарить Владимира и Дениса за оперативность.</p></div>
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Михаил Прокопьев</h4><div class="date">13 мая 2025</div><p>Делают дома на совесть, нет чувства что на всём экономят. Ребята живут с тобой на одной улице — это дорогого стоит.</p></div>
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Павел Климентьев</h4><div class="date">6 ноября 2025</div><p>Приобрели дом, всё пока устраивает. Ребята хорошие, если возникают вопросы — помогают решить, не отказывают.</p></div>
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Ксения Игошина</h4><div class="date">14 марта 2026</div><p>Приобрели тёплый дом с хорошим ремонтом. Огромная благодарность Денису и Владимиру за помощь на всех этапах сделки!</p></div>
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Николай Митрохин</h4><div class="date">27 мая 2024</div><p>Хочу поблагодарить Владимира и Дениса, построили отличный дом — тёплый, уютный!</p></div>
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Сонечка Кулькешева</h4><div class="date">17 апреля 2025</div><p>Приобрели отличный тёплый дом с готовым ремонтом! Застройщик даёт возможность выбрать двери, обои, кафель, ламинат, сантехнику.</p></div>
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Дмитрий Яхонтов</h4><div class="date">21 апреля 2025</div><p>Показали все этапы строительства! Предоставляют выбор материалов отделки! Дают гарантию на дом! Всегда на связи.</p></div>
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Алексей Жук</h4><div class="date">21 апреля 2025</div><p>Оперативно ответили на все вопросы, предложили несколько вариантов. Работают грамотные специалисты, показали все этапы работ.</p></div>
+        <div class="review-card"><div class="stars">★★★★★</div><h4>Михаил Прохоров</h4><div class="date">21 апреля 2025</div><p>В компании работают профессионалы своего дела! Доступ в любой стадии строительства: фото, видео, личное присутствие.</p></div>
+      </div>
+      <button class="reviews-nav reviews-next" id="reviewsNext" aria-label="Вперёд">→</button>
+    </div>
+    <div class="reviews-more">
+      <a href="https://go.2gis.com/NOLSw" target="_blank" rel="noopener" class="btn btn-outline">Все отзывы в 2ГИС</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="eyebrow" style="color:#ff8a80">Контакты</div>
+    <h2>Оставить заявку</h2>
+    <p class="lead">Оставьте телефон — перезвоним и подберём дом, или напишите нам напрямую.</p>
+    <div class="contact-grid">
+      <form class="contact-form" id="leadForm">
+        <div id="cityBadge" class="city-badge" style="display:none">
+          <span id="cityBadgeLabel">Город:</span> <b id="cityBadgeName"></b>
+          <button type="button" id="cityBadgeClear" aria-label="Убрать">✕</button>
+        </div>
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required>
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+        <div id="form-status"></div>
+        <button type="submit" class="btn btn-primary">Отправить заявку в Telegram</button>
+      </form>
+      <div class="contact-alt">
+        <a href="tel:+79128058002" class="btn btn-ghost">📞 Позвонить: +7 (912) 805-80-02</a>
+        <a href="tel:+79000600222" class="btn btn-ghost">📞 45-80-02</a>
+        <a href="https://t.me/ofisSKIM" target="_blank" rel="noopener" class="btn btn-ghost">✈️ Написать в Telegram</a>
+        <a href="https://vk.ru/club237059152" target="_blank" rel="noopener" class="btn btn-ghost"><svg style="width:18px;height:18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13.16 18.5c-6.6 0-10.44-4.53-10.6-12.06h3.3c.11 5.55 2.56 7.9 4.5 8.39V6.44h3.12v4.77c1.9-.2 3.9-2.39 4.58-4.77h3.11c-.52 2.94-2.71 5.13-4.26 6.03 1.55.73 4.04 2.64 4.99 6.03h-3.43c-.74-2.28-2.56-4.04-5-4.28v4.28h-.38z"/></svg> Сообщество ВКонтакте</a>
+        <a href="https://max.ru/u/f9LHodD0cOLj8Q-02zbtOaJYzTNDjHPJ66A_b8TA5QR5SPQ6jVFQ4smYxes" target="_blank" rel="noopener" class="btn btn-ghost"><img src="images/max-icon.png" alt="" style="width:18px;height:18px;border-radius:5px"> Написать в MAX</a>
+        <div class="contact-info">
+          <div><b>Офис продаж</b>с. Агаповка, мкр. Тепличный, 47</div>
+          <div><b>Отдел продаж</b>45-80-02 · +7 (912) 805-80-02</div>
+          <div><b>Время работы</b>Ежедневно с 9:00 до 19:00</div>
+          <div><b>Email</b><a href="mailto:skim-mgn@yandex.ru" style="text-decoration:underline">skim-mgn@yandex.ru</a></div>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://yandex.ru/map-widget/v1/?text=Челябинская%20область%2C%20село%20Агаповка%2C%20микрорайон%20Тепличный%2C%2047&z=15" loading="lazy" title="Карта проезда до офиса СКИМ" allowfullscreen></iframe>
+          <a class="map-link" href="https://yandex.ru/maps/?text=Челябинская%20область%2C%20село%20Агаповка%2C%20микрорайон%20Тепличный%2C%2047" target="_blank" rel="noopener">
+            📍 Открыть в Яндекс.Картах
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <b>ООО «СКИМ»</b><br>
+      Строительство · Услуги спецтехники<br>
+      ИНН 0800012598 · ОГРН 1230800007008
+    </div>
+    <div class="cols">
+      <div>
+        <b>Адрес</b><br>
+        с. Агаповка, мкр. Тепличный, 47
+      </div>
+      <div>
+        <b>Телефоны</b><br>
+        45-80-02<br>
+        +7 (912) 805-80-02
+      </div>
+      <div>
+        <b>Время работы</b><br>
+        Ежедневно 9:00–19:00<br>
+        <a href="mailto:skim-mgn@yandex.ru" style="text-decoration:underline">skim-mgn@yandex.ru</a>
+      </div>
+      <div>
+        <b>Мессенджеры</b><br>
+        Telegram: @ofisSKIM<br>
+        ВКонтакте: <a href="https://vk.ru/club237059152" target="_blank" rel="noopener" style="text-decoration:underline">vk.ru/club237059152</a><br>
+        MAX: <a href="https://max.ru/u/f9LHodD0cOLj8Q-02zbtOaJYzTNDjHPJ66A_b8TA5QR5SPQ6jVFQ4smYxes" target="_blank" rel="noopener" style="text-decoration:underline">Написать в MAX</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="floating-actions">
+  <a href="https://vk.ru/club237059152" target="_blank" rel="noopener" class="fab-vk" aria-label="Сообщество ВКонтакте">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M13.16 18.5c-6.6 0-10.44-4.53-10.6-12.06h3.3c.11 5.55 2.56 7.9 4.5 8.39V6.44h3.12v4.77c1.9-.2 3.9-2.39 4.58-4.77h3.11c-.52 2.94-2.71 5.13-4.26 6.03 1.55.73 4.04 2.64 4.99 6.03h-3.43c-.74-2.28-2.56-4.04-5-4.28v4.28h-.38z"/></svg>
+  </a>
+  <a href="https://t.me/ofisSKIM" target="_blank" rel="noopener" class="fab-tg" aria-label="Написать в Telegram">
+    <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zM362 176.1c-3.7 39-19.9 133.7-28.1 177.4-3.5 18.5-10.3 24.7-16.9 25.3-14.4 1.3-25.3-9.5-39.2-18.7-21.8-14.3-34.1-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-36.9 23.4-104.1 68.9-9.8 6.8-18.8 10.1-26.8 9.9-8.8-.2-25.8-5-38.4-9.1-15.5-5-27.8-7.7-26.7-16.2.5-4.4 6.6-8.9 18.3-13.5 71.6-31.2 119.4-51.7 143.4-61.6 68.3-28.4 82.5-33.3 91.7-33.5 2-.03 6.6.5 9.6 2.9 2.4 2 3.1 4.7 3.4 6.6.3 1.9.7 6.2.4 9.6z"/></svg>
+  </a>
+  <a href="https://max.ru/u/f9LHodD0cOLj8Q-02zbtOaJYzTNDjHPJ66A_b8TA5QR5SPQ6jVFQ4smYxes" target="_blank" rel="noopener" class="fab-max" aria-label="Написать в MAX">
+    <img src="images/max-icon.png" alt="MAX">
+  </a>
+  <a href="tel:+79128058002" class="fab-call" aria-label="Позвонить">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1l-2.2 2.1z"/></svg>
+  </a>
+</div>
+
+
+<div class="compare-bar" id="compareBar">
+  <span id="compareCount">Выбрано для сравнения: 0</span>
+  <button type="button" class="btn btn-primary" id="compareOpenBtn" style="padding:10px 16px;font-size:13px;">Сравнить</button>
+  <button type="button" class="compare-clear" id="compareClearBtn" aria-label="Очистить">✕</button>
+</div>
+
+<div class="compare-modal" id="compareModal">
+  <div class="compare-modal-inner">
+    <button class="lightbox-close" id="compareModalClose" style="position:absolute;top:14px;right:14px;background:#f0f1f6;color:var(--navy);" aria-label="Закрыть">✕</button>
+    <h3>Сравнение объектов</h3>
+    <div class="compare-table-wrap">
+      <table id="compareTable"></table>
+    </div>
+  </div>
+</div>
+
+<div class="install-banner" id="installBanner">
+  <img src="images/logo.png" alt="СКИМ">
+  <div class="txt">
+    <b>Установите СКИМ на экран</b>
+    <span id="installBannerText">Быстрый доступ без браузера — как приложение</span>
+  </div>
+  <button type="button" class="btn btn-primary" id="installBtn" style="padding:10px 16px;font-size:13px;">Установить</button>
+  <button type="button" class="install-close" id="installClose" aria-label="Закрыть">✕</button>
+</div>
+
+<div class="print-proposal" id="printProposal">
+  <div class="p-header">
+    <img src="images/logo.png" alt="СКИМ">
+    <div>
+      <h1>ООО «СКИМ» — коммерческое предложение</h1>
+      <span id="printDate"></span>
+    </div>
+  </div>
+  <h2>Параметры расчёта</h2>
+  <table>
+    <tr><td>Стоимость дома</td><td id="printPrice"></td></tr>
+    <tr><td>Первоначальный взнос</td><td id="printDown"></td></tr>
+    <tr><td>Срок ипотеки</td><td id="printYears"></td></tr>
+    <tr><td>Ставка</td><td>3%</td></tr>
+  </table>
+  <div class="p-total">
+    <span>Ежемесячный платёж</span><br>
+    <b id="printMonthly"></b>
+  </div>
+  <h2>Контакты</h2>
+  <table>
+    <tr><td>Отдел продаж</td><td>45-80-02 · +7 (912) 805-80-02</td></tr>
+    <tr><td>Офис</td><td>с. Агаповка, мкр. Тепличный, 47</td></tr>
+    <tr><td>Время работы</td><td>Ежедневно 9:00–19:00</td></tr>
+    <tr><td>Email</td><td>skim-mgn@yandex.ru</td></tr>
+    <tr><td>Telegram</td><td>@ofisSKIM</td></tr>
+  </table>
+  <div class="p-footer">
+    ООО «СКИМ» · ИНН 0800012598 · ОГРН 1230800007008<br>
+    Расчёт носит информационный характер и не является публичной офертой. Точные условия уточняйте у менеджера.
+  </div>
+</div>
+
+<script>
+  /* SCROLL PROGRESS BAR */
+  (function(){
+    var bar = document.getElementById('scrollProgress');
+    function update(){
+      var doc = document.documentElement;
+      var scrollTop = doc.scrollTop || document.body.scrollTop;
+      var scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
+      var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+      bar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  /* MORTGAGE CALCULATOR */
+  (function(){
+    var priceEl = document.getElementById('calcPrice');
+    if(!priceEl) return;
+    var downEl = document.getElementById('calcDown');
+    var yearsEl = document.getElementById('calcYears');
+    var priceOut = document.getElementById('calcPriceOut');
+    var downOut = document.getElementById('calcDownOut');
+    var yearsOut = document.getElementById('calcYearsOut');
+    var monthlyOut = document.getElementById('calcMonthly');
+    var RATE = 0.03;
+
+    function fmt(n){ return Math.round(n).toLocaleString('ru-RU') + ' ₽'; }
+    function yearsWord(n){
+      var mod10 = n % 10, mod100 = n % 100;
+      if(mod100 >= 11 && mod100 <= 14) return 'лет';
+      if(mod10 === 1) return 'год';
+      if(mod10 >= 2 && mod10 <= 4) return 'года';
+      return 'лет';
+    }
+    function update(){
+      var price = parseInt(priceEl.value, 10);
+      var downPct = parseInt(downEl.value, 10);
+      var years = parseInt(yearsEl.value, 10);
+      var downSum = price * downPct / 100;
+      var loan = price - downSum;
+      var n = years * 12;
+      var r = RATE / 12;
+      var monthly = loan * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+      priceOut.textContent = fmt(price);
+      downOut.textContent = downPct + '% (' + fmt(downSum) + ')';
+      yearsOut.textContent = years + ' ' + yearsWord(years);
+      monthlyOut.textContent = fmt(monthly);
+    }
+    [priceEl, downEl, yearsEl].forEach(function(el){ el.addEventListener('input', update); });
+    update();
+  })();
+
+  /* DOWNLOAD PROPOSAL (PDF via print) */
+  (function(){
+    var btn = document.getElementById('downloadProposal');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      document.getElementById('printPrice').textContent = document.getElementById('calcPriceOut').textContent;
+      document.getElementById('printDown').textContent = document.getElementById('calcDownOut').textContent;
+      document.getElementById('printYears').textContent = document.getElementById('calcYearsOut').textContent;
+      document.getElementById('printMonthly').textContent = document.getElementById('calcMonthly').textContent + ' / мес';
+      document.getElementById('printDate').textContent = 'Сформировано ' + new Date().toLocaleDateString('ru-RU');
+      window.print();
+    });
+  })();
+
+  /* PWA: SERVICE WORKER + INSTALL PROMPT */
+  (function(){
+    if('serviceWorker' in navigator){
+      window.addEventListener('load', function(){
+        navigator.serviceWorker.register('/sw.js').catch(function(){});
+      });
+    }
+
+    var banner = document.getElementById('installBanner');
+    var closeBtn = document.getElementById('installClose');
+    var installBtn = document.getElementById('installBtn');
+    var bannerText = document.getElementById('installBannerText');
+    var deferredPrompt = null;
+
+    if(localStorage.getItem('skim_install_dismissed') === '1'){ return; }
+
+    var isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    if(isStandalone) return;
+
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    window.addEventListener('beforeinstallprompt', function(e){
+      e.preventDefault();
+      deferredPrompt = e;
+      banner.classList.add('show');
+    });
+
+    if(isIOS){
+      bannerText.textContent = 'Нажмите "Поделиться" внизу браузера → "На экран Домой"';
+      installBtn.style.display = 'none';
+      setTimeout(function(){ banner.classList.add('show'); }, 2500);
+    }
+
+    installBtn.addEventListener('click', function(){
+      if(!deferredPrompt) return;
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.finally(function(){
+        deferredPrompt = null;
+        banner.classList.remove('show');
+      });
+    });
+    closeBtn.addEventListener('click', function(){
+      banner.classList.remove('show');
+      localStorage.setItem('skim_install_dismissed', '1');
+    });
+  })();
+
+  /* MOBILE MENU */
+  document.getElementById('burgerBtn').addEventListener('click', function(){
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.getElementById('mobileMenu').classList.remove('open');
+    });
+  });
+
+  /* GEO ROUTE + CARDS + LISTINGS -> SELECT CITY/OBJECT */
+  var selectedCity = '';
+  var selectedLabel = 'Город';
+  (function(){
+    var badge = document.getElementById('cityBadge');
+    var badgeName = document.getElementById('cityBadgeName');
+    var badgeLabel = document.getElementById('cityBadgeLabel');
+    var badgeClear = document.getElementById('cityBadgeClear');
+
+    function selectCity(name, label){
+      selectedCity = name;
+      selectedLabel = label || 'Город';
+      badgeName.textContent = name;
+      badgeLabel.textContent = selectedLabel + ':';
+      badge.style.display = 'flex';
+      document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+      var nameInput = document.getElementById('name');
+      if(nameInput) setTimeout(function(){ nameInput.focus(); }, 500);
+    }
+    window.selectCity = selectCity;
+    badgeClear.addEventListener('click', function(){
+      selectedCity = '';
+      badge.style.display = 'none';
+    });
+
+    document.querySelectorAll('.route-dot').forEach(function(dot){
+      dot.addEventListener('click', function(){ selectCity(dot.getAttribute('data-city')); });
+      dot.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectCity(dot.getAttribute('data-city')); }
+      });
+    });
+    document.querySelectorAll('.geo-card').forEach(function(card){
+      card.addEventListener('click', function(){ selectCity(card.getAttribute('data-city')); });
+      card.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectCity(card.getAttribute('data-city')); }
+      });
+    });
+  })();
+
+  /* MAIN LEAD FORM -> TELEGRAM */
+  document.getElementById('leadForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var status = document.getElementById('form-status');
+    if(!name || !phone){
+      status.textContent = 'Заполните имя и телефон';
+      status.style.color = '#ffb3b3';
+      return;
+    }
+    var text = 'Заявка с сайта СКИМ' + (selectedCity ? '\n' + selectedLabel + ': ' + selectedCity : '') + '\nИмя: ' + name + '\nТелефон: ' + phone;
+    var url = 'https://t.me/ofisSKIM?text=' + encodeURIComponent(text);
+    status.textContent = 'Открываем Telegram — подтвердите отправку сообщения';
+    status.style.color = '#a8ffb0';
+    window.open(url, '_blank');
+  });
+
+  /* MINI CTA FORM -> TELEGRAM */
+  document.getElementById('miniForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var phone = document.getElementById('miniPhone').value.trim();
+    var status = document.getElementById('mini-form-status');
+    if(!phone){
+      status.textContent = 'Введите телефон';
+      status.style.color = '#c0392b';
+      return;
+    }
+    var text = 'Заявка с сайта СКИМ (не нашли подходящий вариант)\nТелефон: ' + phone;
+    var url = 'https://t.me/ofisSKIM?text=' + encodeURIComponent(text);
+    status.textContent = 'Открываем Telegram — подтвердите отправку сообщения';
+    status.style.color = '#2e7d32';
+    window.open(url, '_blank');
+  });
+
+  /* REVEAL ON SCROLL */
+  (function(){
+    var targets = Array.prototype.slice.call(document.querySelectorAll('.reveal, .reveal-stagger'));
+    if(!targets.length) return;
+
+    function revealEl(el){
+      el.classList.add('visible');
+    }
+
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            revealEl(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.01, rootMargin:'200px 0px -10% 0px'});
+      targets.forEach(function(t){ io.observe(t); });
+
+      /* Safety net: catches fast/instant scrolls (fling, anchor jumps) that can skip
+         the observer's intersection frame entirely. */
+      var checkFallback = function(){
+        var vh = window.innerHeight;
+        targets.forEach(function(t){
+          if(!t.classList.contains('visible') && t.getBoundingClientRect().top < vh){
+            revealEl(t);
+          }
+        });
+      };
+      var ticking = false;
+      window.addEventListener('scroll', function(){
+        if(!ticking){
+          requestAnimationFrame(function(){ checkFallback(); ticking = false; });
+          ticking = true;
+        }
+      }, {passive:true});
+      window.addEventListener('load', checkFallback);
+      setTimeout(checkFallback, 400);
+      /* Belt-and-braces: a light periodic check that doesn't depend on any
+         event actually firing, so content can never get stuck invisible. */
+      var pollTimer = setInterval(function(){
+        checkFallback();
+        var allDone = targets.every(function(t){ return t.classList.contains('visible'); });
+        if(allDone) clearInterval(pollTimer);
+      }, 400);
+    } else {
+      targets.forEach(revealEl);
+    }
+  })();
+
+  /* ANIMATED COUNTERS */
+  (function(){
+    var counters = document.querySelectorAll('.counter');
+    if(!counters.length) return;
+    function animate(el){
+      var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+      var duration = 1200;
+      var start = null;
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var value = Math.floor(progress * target);
+        el.textContent = value;
+        if(progress < 1){
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+    if('IntersectionObserver' in window){
+      var io2 = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            animate(entry.target);
+            io2.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.5});
+      counters.forEach(function(c){ io2.observe(c); });
+    } else {
+      counters.forEach(function(c){ c.textContent = c.getAttribute('data-target'); });
+    }
+  })();
+
+  /* LISTINGS CATALOG */
+  (function(){
+    var LISTINGS = [
+      {c:'Агаповка', a:'Первомайская, 55', p:6500000, plot:6, type:'дом', garage:false, finish:'черновая', ready:true, month:'', hot:true, note:''},
+      {c:'Агаповка', a:'Тепличный, 44/1', p:12500000, plot:6, type:'дом', garage:true, finish:'', ready:true, month:'май', hot:false, note:'асфальт до дома, центр посёлка, с мебелью'},
+      {c:'Агаповка', a:'Тепличный, 44/2', p:10500000, plot:6, type:'дом', garage:false, finish:'', ready:true, month:'май', hot:false, note:'асфальт до дома, центр посёлка'},
+      {c:'Агаповка', a:'Тепличный, 51', p:10500000, plot:6, type:'дом', garage:false, finish:'', ready:false, month:'август', hot:false, note:''},
+      {c:'Агаповка', a:'Казачий, 1а', p:11000000, plot:8.5, type:'дом', garage:true, finish:'', ready:false, month:'июль', hot:true, note:''},
+      {c:'Агаповка', a:'Казачий, 5', p:7500000, plot:6, type:'дом', garage:false, finish:'', ready:false, month:'июль', hot:true, note:''},
+      {c:'Агаповка', a:'Казачий, 5/1', p:8500000, plot:6, type:'дом', garage:false, finish:'', ready:false, month:'август', hot:false, note:''},
+      {c:'Агаповка', a:'Казачий, 7', p:8500000, plot:6, type:'дом', garage:false, finish:'', ready:false, month:'июль', hot:false, note:''},
+      {c:'Агаповка', a:'Казачий, 7/1', p:8500000, plot:6, type:'дом', garage:false, finish:'', ready:false, month:'август', hot:false, note:''},
+      {c:'Агаповка', a:'Казачий, 31', p:11500000, plot:10, type:'дом', garage:true, finish:'', ready:false, month:'июль', hot:true, note:''},
+      {c:'Агаповка', a:'Казачий, 37', p:10500000, plot:8.8, type:'дом', garage:true, finish:'', ready:false, month:'август', hot:true, note:''},
+      {c:'Агаповка', a:'Казачий, 39', p:7500000, plot:5, type:'дуплекс', garage:false, finish:'', ready:false, month:'август', hot:false, note:''},
+      {c:'Агаповка', a:'Казачий, 39/1', p:6500000, plot:5, type:'дуплекс', garage:false, finish:'', ready:false, month:'август', hot:true, note:''},
+      {c:'Агаповка', a:'Солнечный, 40/3', p:3200000, plot:2.9, type:'квартира', area:30, garage:false, finish:'', ready:false, month:'июль', hot:true, note:''},
+      {c:'Агаповка', a:'Солнечный, 41/3', p:3200000, plot:2.9, type:'квартира', area:30, garage:false, finish:'', ready:false, month:'июль', hot:true, note:''},
+      {c:'Агаповка', a:'Солнечный, 42', p:8000000, plot:6, type:'дом', garage:false, finish:'', ready:false, month:'август', hot:false, note:''},
+      {c:'Агаповка', a:'Солнечный, 43', p:8000000, plot:6, type:'дом', garage:false, finish:'', ready:false, month:'август', hot:false, note:''},
+      {c:'Агаповка', a:'Солнечный, 44', p:8000000, plot:6, type:'дом', garage:false, finish:'', ready:false, month:'август', hot:false, note:''},
+      {c:'Агаповка', a:'Солнечный, 44/1', p:8000000, plot:6, type:'дом', garage:false, finish:'', ready:false, month:'август', hot:false, note:''},
+      {c:'Агаповка', a:'Солнечный, 53', p:7000000, plot:5, type:'дуплекс', garage:false, finish:'', ready:false, month:'июль', hot:false, note:''},
+      {c:'Агаповка', a:'Юго-Западный, 5а/1', p:8000000, plot:9.5, type:'дом', garage:false, finish:'', ready:false, month:'июль', hot:true, note:''},
+      {c:'Агаповка', a:'Юго-Западный, 50', p:9500000, plot:6, type:'дуплекс', garage:true, finish:'', ready:false, month:'август', hot:false, note:''},
+      {c:'Агаповка', a:'Юго-Западный, 50/1', p:8500000, plot:6, type:'дуплекс', garage:true, finish:'', ready:false, month:'август', hot:true, note:''},
+      {c:'Агаповка', a:'Юго-Западный, 53', p:8500000, plot:6, type:'дом', garage:true, finish:'', ready:false, month:'июль', hot:false, note:''},
+      {c:'Агаповка', a:'Правобережная, 8/2', p:4200000, plot:1.5, type:'квартира', area:50, garage:false, finish:'', ready:true, month:'', hot:true, note:''},
+      {c:'Агаповка', a:'Правобережная, 8/3', p:4200000, plot:1.5, type:'квартира', area:50, garage:false, finish:'', ready:true, month:'', hot:true, note:''},
+      {c:'Магнитогорск', a:'Рабочая, 61', p:14500000, plot:4, type:'дом', garage:false, finish:'предчистовая', ready:false, month:'июль', hot:false, note:''},
+      {c:'Магнитогорск', a:'Приозёрная, 22', p:14500000, plot:4, type:'дом', garage:false, finish:'предчистовая', ready:false, month:'август', hot:false, note:''},
+      {c:'Магнитогорск', a:'Приозёрная, 22/1', p:10500000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'июль', hot:false, note:''},
+      {c:'Магнитогорск', a:'Приозёрная, 22/2', p:10500000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'июль', hot:false, note:''},
+      {c:'Магнитогорск', a:'Международная, 57', p:15000000, plot:5.3, type:'дом', garage:false, finish:'предчистовая', ready:false, month:'июль', hot:false, note:''},
+      {c:'Магнитогорск', a:'Международная, 57/1', p:14500000, plot:5.7, type:'дом', garage:false, finish:'предчистовая', ready:false, month:'июль', hot:false, note:''},
+      {c:'Магнитогорск', a:'Свободы, 57', p:11000000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'сентябрь', hot:false, note:''},
+      {c:'Магнитогорск', a:'Свободы, 57/1', p:11000000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'сентябрь', hot:false, note:''},
+      {c:'Магнитогорск', a:'Свободы, 57/2', p:11000000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'сентябрь', hot:false, note:''},
+      {c:'Магнитогорск', a:'Свободы, 57/3', p:11000000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'сентябрь', hot:false, note:''},
+      {c:'Магнитогорск', a:'Российская, 68/1', p:15000000, plot:6.8, type:'дом', garage:false, finish:'предчистовая', ready:false, month:'июль', hot:false, note:''},
+      {c:'Магнитогорск', a:'Желябова, 15', p:9000000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'сентябрь', hot:false, note:''},
+      {c:'Магнитогорск', a:'Желябова, 15/1', p:9000000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'сентябрь', hot:false, note:''},
+      {c:'Магнитогорск', a:'Желябова, 15/2', p:9000000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'сентябрь', hot:false, note:''}
+    ];
+
+    var TYPE_LABEL = {'дом':'Отдельный дом','дуплекс':'Дуплекс','квартира':'Квартира'};
+    var FINISH_LABEL = {'черновая':'Черновая отделка','предчистовая':'Предчистовая отделка'};
+
+    var grid = document.getElementById('listingsGrid');
+    var buttons = document.querySelectorAll('#listingFilters .filter-btn');
+    var sortSelect = document.getElementById('listingSort');
+    var moreBtn = document.getElementById('listingsMore');
+    var countEl = document.getElementById('listingsCount');
+    var empty = document.getElementById('plansEmpty');
+    var activeFilter = 'all';
+    var pageSize = 9;
+    var shown = pageSize;
+    var compareList = [];
+    var MAX_COMPARE = 3;
+
+    function fmtPrice(n){ return n.toLocaleString('ru-RU') + ' ₽'; }
+
+    function cardHTML(item, index){
+      var specs = '';
+      if(item.type === 'квартира'){
+        specs += '<span>' + item.area + ' м²</span><span>' + item.plot + ' сот. земли</span>';
+      } else {
+        specs += '<span>' + TYPE_LABEL[item.type] + '</span><span>' + item.plot + ' сот.</span>';
+      }
+      if(item.garage) specs += '<span>🚗 Гараж</span>';
+
+      var meta = '';
+      if(item.ready){
+        meta += '<span class="listing-status is-ready">' + (item.type === 'квартира' ? 'Готова' : 'Готов') + '</span>';
+      } else if(item.month){
+        meta += '<span class="listing-status">Срок: ' + item.month + '</span>';
+      }
+      if(item.finish && FINISH_LABEL[item.finish]){
+        meta += '<span class="finish-badge ' + (item.finish === 'черновая' ? 'finish-rough' : 'finish-pre') + '">' + FINISH_LABEL[item.finish] + '</span>';
+      }
+
+      var noteHtml = item.note ? '<div style="font-size:12px;color:var(--muted);margin:-6px 0 12px;">' + item.note + '</div>' : '';
+      var id = LISTINGS.indexOf(item);
+      var checked = compareList.indexOf(id) > -1;
+
+      return '' +
+        '<div class="listing-card" style="animation-delay:' + Math.min(index * 0.04, 0.4) + 's" ' +
+          'data-city="' + item.c + '" data-hot="' + item.hot + '" data-ready="' + item.ready + '" data-garage="' + item.garage + '" data-price="' + item.p + '">' +
+          '<div class="listing-top">' +
+            '<span class="listing-city">' + item.c + '</span>' +
+            (item.hot ? '<span class="listing-hot">🔥 Хит</span>' : '') +
+          '</div>' +
+          '<h3 class="listing-addr">' + item.a + '</h3>' +
+          '<div class="listing-price">' + fmtPrice(item.p) + '</div>' +
+          '<div class="listing-specs">' + specs + '</div>' +
+          '<div class="listing-meta">' + meta + '</div>' +
+          noteHtml +
+          '<a href="#contact" class="listing-cta" data-addr="' + item.c + ', ' + item.a + '" data-price="' + fmtPrice(item.p) + '">Узнать подробнее →</a>' +
+          '<label class="compare-check"><input type="checkbox" class="compare-cb" data-id="' + id + '"' + (checked ? ' checked' : '') + '><span>Сравнить</span></label>' +
+        '</div>';
+    }
+
+    function getFiltered(){
+      return LISTINGS.filter(function(item){
+        if(activeFilter === 'all') return true;
+        if(activeFilter === 'hot') return item.hot;
+        if(activeFilter === 'ready') return item.ready;
+        if(activeFilter === 'garage') return item.garage;
+        if(activeFilter.indexOf('city:') === 0) return item.c === activeFilter.slice(5);
+        return true;
+      });
+    }
+
+    function render(){
+      var list = getFiltered().slice();
+      var sortVal = sortSelect.value;
+      if(sortVal === 'price-asc') list.sort(function(a,b){ return a.p - b.p; });
+      else if(sortVal === 'price-desc') list.sort(function(a,b){ return b.p - a.p; });
+
+      var visible = list.slice(0, shown);
+      grid.innerHTML = visible.map(function(item, i){ return cardHTML(item, i); }).join('');
+
+      countEl.textContent = list.length ? ('Показано ' + visible.length + ' из ' + list.length) : '';
+      empty.style.display = list.length === 0 ? 'block' : 'none';
+      moreBtn.style.display = shown < list.length ? 'inline-flex' : 'none';
+
+      grid.querySelectorAll('.listing-cta').forEach(function(link){
+        link.addEventListener('click', function(e){
+          e.preventDefault();
+          if(window.selectCity) window.selectCity(link.getAttribute('data-addr') + ' — ' + link.getAttribute('data-price'), 'Объект');
+        });
+      });
+
+      grid.querySelectorAll('.compare-cb').forEach(function(cb){
+        cb.addEventListener('change', function(){
+          var id = parseInt(cb.getAttribute('data-id'), 10);
+          if(cb.checked){
+            if(compareList.length >= MAX_COMPARE){
+              cb.checked = false;
+              compareBarSpan.textContent = 'Максимум ' + MAX_COMPARE + ' объекта для сравнения';
+              compareBar.classList.add('show');
+              setTimeout(updateCompareBar, 1600);
+              return;
+            }
+            compareList.push(id);
+          } else {
+            compareList.splice(compareList.indexOf(id), 1);
+          }
+          updateCompareBar();
+        });
+      });
+    }
+
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        buttons.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        activeFilter = btn.getAttribute('data-filter');
+        shown = pageSize;
+        render();
+      });
+    });
+    sortSelect.addEventListener('change', function(){ shown = pageSize; render(); });
+    moreBtn.addEventListener('click', function(){ shown += pageSize; render(); });
+
+    /* COMPARE BAR + MODAL */
+    var compareBar = document.getElementById('compareBar');
+    var compareBarSpan = document.getElementById('compareCount');
+    var compareOpenBtn = document.getElementById('compareOpenBtn');
+    var compareClearBtn = document.getElementById('compareClearBtn');
+    var compareModal = document.getElementById('compareModal');
+    var compareModalClose = document.getElementById('compareModalClose');
+    var compareTable = document.getElementById('compareTable');
+
+    function updateCompareBar(){
+      if(compareList.length === 0){
+        compareBar.classList.remove('show');
+        return;
+      }
+      compareBar.classList.add('show');
+      compareBarSpan.textContent = 'Выбрано для сравнения: ' + compareList.length;
+      compareOpenBtn.disabled = compareList.length < 2;
+      compareOpenBtn.style.opacity = compareList.length < 2 ? '.5' : '1';
+    }
+
+    function buildCompareTable(){
+      var items = compareList.map(function(id){ return LISTINGS[id]; });
+      var minPrice = Math.min.apply(null, items.map(function(it){ return it.p; }));
+      var pricesDiffer = items.some(function(it){ return it.p !== minPrice; });
+
+      var headCells = items.map(function(it, i){
+        return '<td><div class="compare-obj">' +
+          '<button class="compare-remove" data-id="' + compareList[i] + '">✕ убрать</button>' +
+          '<span class="compare-city">' + it.c + '</span>' +
+          '<div class="compare-addr">' + it.a + (it.hot ? ' 🔥' : '') + '</div>' +
+          '<div class="compare-price">' + fmtPrice(it.p) +
+            (pricesDiffer && it.p === minPrice ? '<span class="compare-best">Выгоднее</span>' : '') +
+          '</div>' +
+        '</div></td>';
+      }).join('');
+      var html = '<tr class="compare-head-row"><th></th>' + headCells + '</tr>';
+
+      var rows = [
+        {label:'🏠 Тип', get:function(it){ return TYPE_LABEL[it.type]; }},
+        {label:'📐 Площадь', get:function(it){ return it.type === 'квартира' ? (it.area + ' м²') : '—'; }},
+        {label:'🌳 Участок', get:function(it){ return it.plot + ' сот.'; }},
+        {label:'🚗 Гараж', get:function(it){ return it.garage ? '✅ Есть' : '—'; }},
+        {label:'🎨 Отделка', get:function(it){ return it.finish ? FINISH_LABEL[it.finish] : 'Чистовая'; }},
+        {label:'📅 Статус', get:function(it){ return it.ready ? '✅ Готов' : ('Срок: ' + it.month); }}
+      ];
+      html += rows.map(function(row){
+        var values = items.map(function(it){ return row.get(it); });
+        if(values.every(function(v){ return v === '—'; })) return '';
+        var differ = values.some(function(v){ return v !== values[0]; });
+        var cells = values.map(function(v){
+          return '<td' + (differ ? ' class="diff"' : '') + '>' + v + '</td>';
+        }).join('');
+        return '<tr><th>' + row.label + '</th>' + cells + '</tr>';
+      }).join('');
+
+      html += '<tr class="compare-cta-row"><th></th>' + items.map(function(it){
+        return '<td><button class="compare-pick" data-addr="' + it.c + ', ' + it.a + '" data-price="' + fmtPrice(it.p) + '">Хочу этот дом</button></td>';
+      }).join('') + '</tr>';
+
+      compareTable.innerHTML = html;
+
+      compareTable.querySelectorAll('.compare-remove').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var id = parseInt(btn.getAttribute('data-id'), 10);
+          compareList.splice(compareList.indexOf(id), 1);
+          if(compareList.length === 0){
+            compareModal.classList.remove('open');
+          } else {
+            buildCompareTable();
+          }
+          updateCompareBar();
+          render();
+        });
+      });
+
+      compareTable.querySelectorAll('.compare-pick').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          compareModal.classList.remove('open');
+          if(window.selectCity) window.selectCity(btn.getAttribute('data-addr') + ' — ' + btn.getAttribute('data-price'), 'Объект');
+        });
+      });
+    }
+
+    compareOpenBtn.addEventListener('click', function(){
+      if(compareList.length < 2) return;
+      buildCompareTable();
+      compareModal.classList.add('open');
+    });
+    compareClearBtn.addEventListener('click', function(){
+      compareList = [];
+      updateCompareBar();
+      render();
+    });
+    compareModalClose.addEventListener('click', function(){ compareModal.classList.remove('open'); });
+    compareModal.addEventListener('click', function(e){ if(e.target === compareModal) compareModal.classList.remove('open'); });
+
+    render();
+  })();
+
+  /* GALLERY LIGHTBOX */
+  (function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('#galleryGrid a'));
+    var lightbox = document.getElementById('lightbox');
+    var img = document.getElementById('lightboxImg');
+    var closeBtn = document.getElementById('lightboxClose');
+    var prevBtn = document.getElementById('lightboxPrev');
+    var nextBtn = document.getElementById('lightboxNext');
+    var current = 0;
+
+    function open(index){
+      current = index;
+      img.src = links[current].getAttribute('href');
+      img.alt = links[current].querySelector('img').alt || '';
+      lightbox.classList.add('open');
+    }
+    function close(){
+      lightbox.classList.remove('open');
+    }
+    function nav(delta){
+      current = (current + delta + links.length) % links.length;
+      img.src = links[current].getAttribute('href');
+      img.alt = links[current].querySelector('img').alt || '';
+    }
+
+    links.forEach(function(link, index){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        open(index);
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', function(){ nav(-1); });
+    nextBtn.addEventListener('click', function(){ nav(1); });
+    lightbox.addEventListener('click', function(e){
+      if(e.target === lightbox) close();
+    });
+    document.addEventListener('keydown', function(e){
+      if(!lightbox.classList.contains('open')) return;
+      if(e.key === 'Escape') close();
+      if(e.key === 'ArrowLeft') nav(-1);
+      if(e.key === 'ArrowRight') nav(1);
+    });
+  })();
+
+  /* REVIEWS CAROUSEL */
+  (function(){
+    var scroller = document.getElementById('reviewsScroll');
+    var prevBtn = document.getElementById('reviewsPrev');
+    var nextBtn = document.getElementById('reviewsNext');
+    var cardWidth = 298;
+    var autoTimer;
+
+    function scrollByCards(n){
+      scroller.scrollBy({left: n * cardWidth, behavior:'smooth'});
+    }
+    prevBtn.addEventListener('click', function(){ scrollByCards(-1); resetAuto(); });
+    nextBtn.addEventListener('click', function(){ scrollByCards(1); resetAuto(); });
+
+    function autoAdvance(){
+      var maxScroll = scroller.scrollWidth - scroller.clientWidth - 4;
+      if(scroller.scrollLeft >= maxScroll){
+        scroller.scrollTo({left:0, behavior:'smooth'});
+      } else {
+        scrollByCards(1);
+      }
+    }
+    function startAuto(){
+      autoTimer = setInterval(autoAdvance, 4000);
+    }
+    function resetAuto(){
+      clearInterval(autoTimer);
+      startAuto();
+    }
+    scroller.addEventListener('mouseenter', function(){ clearInterval(autoTimer); });
+    scroller.addEventListener('mouseleave', startAuto);
+    scroller.addEventListener('touchstart', function(){ clearInterval(autoTimer); }, {passive:true});
+    startAuto();
+  })();
+</script>
+
+</body>
+</html>

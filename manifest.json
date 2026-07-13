@@ -1,0 +1,15 @@
+{
+  "name": "СКИМ — Строительство и продажа домов",
+  "short_name": "СКИМ",
+  "description": "Строительство и продажа домов от застройщика. Агаповка, Магнитогорск, оз. Банное, Краснодарский край, Крым.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#12173a",
+  "theme_color": "#12173a",
+  "lang": "ru",
+  "icons": [
+    { "src": "images/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "images/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
