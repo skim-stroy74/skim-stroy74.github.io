@@ -575,15 +575,31 @@
   }
   .banks-label{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:14px;display:block;}
   .banks-list{display:flex;flex-wrap:wrap;gap:14px;}
+  @keyframes bankFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-4px);}
+  }
   .bank-card{
     background:#fff;border:1.5px solid #dfe1ef;border-radius:12px;
     padding:14px 20px;display:flex;align-items:center;gap:13px;
     box-shadow:0 4px 14px rgba(18,23,58,.05);
+    cursor:pointer;transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, opacity .6s ease;
+  }
+  .reveal-stagger.visible > .bank-card:nth-child(1){animation:bankFloat 4s ease-in-out 1.2s infinite;}
+  .reveal-stagger.visible > .bank-card:nth-child(2){animation:bankFloat 4s ease-in-out 2.4s infinite;}
+  .reveal-stagger.visible > .bank-card:nth-child(3){animation:bankFloat 4s ease-in-out 3.6s infinite;}
+  .bank-card:hover, .bank-card:focus-visible{
+    animation:none;transform:translateY(-5px);
+    box-shadow:0 12px 26px rgba(18,23,58,.14);border-color:var(--navy);
   }
   .bank-card svg{flex-shrink:0;}
-  .bank-card img{flex-shrink:0;object-fit:contain;}
+  .bank-card img{flex-shrink:0;object-fit:contain;transition:transform .25s ease;}
+  .bank-card:hover img, .bank-card:focus-visible img{transform:rotate(-8deg) scale(1.12);}
   .bank-card .bank-name{font-weight:800;font-size:16px;color:var(--navy);line-height:1.25;}
   .bank-card .bank-sub{font-size:11px;color:var(--muted);font-weight:600;}
+  @media (prefers-reduced-motion: reduce){
+    .bank-card{animation:none!important;}
+  }
   @media (max-width:600px){
     .bank-card{padding:11px 15px;gap:10px;}
     .bank-card .bank-name{font-size:14px;}
@@ -864,22 +880,22 @@
       <a href="#plans" class="btn btn-primary">Смотреть каталог</a>
     </div>
 
-    <div class="banks-row reveal">
-      <span class="banks-label">Оформляем ипотеку с банками-партнёрами:</span>
-      <div class="banks-list">
-        <div class="bank-card">
-          <img src="images/bank-kub.png" alt="Кредит Урал Банк" width="36" height="36">
+    <div class="banks-row">
+      <span class="banks-label reveal">Оформляем ипотеку с банками-партнёрами — нажмите на банк, чтобы оставить заявку:</span>
+      <div class="banks-list reveal-stagger">
+        <div class="bank-card" data-bank="Кредит Урал Банк" role="button" tabindex="0" aria-label="Оформить ипотеку через Кредит Урал Банк">
+          <img src="images/bank-kub.png" alt="" width="36" height="36">
           <div>
             <div class="bank-name">Кредит Урал Банк</div>
             <div class="bank-sub">Группа Газпромбанка</div>
           </div>
         </div>
-        <div class="bank-card">
-          <img src="images/bank-sber.png" alt="СберБанк" width="36" height="36">
+        <div class="bank-card" data-bank="СберБанк" role="button" tabindex="0" aria-label="Оформить ипотеку через СберБанк">
+          <img src="images/bank-sber.png" alt="" width="36" height="36">
           <div class="bank-name">СберБанк</div>
         </div>
-        <div class="bank-card">
-          <img src="images/bank-vtb.png" alt="ВТБ" width="38" height="28">
+        <div class="bank-card" data-bank="ВТБ" role="button" tabindex="0" aria-label="Оформить ипотеку через ВТБ">
+          <img src="images/bank-vtb.png" alt="" width="38" height="28">
           <div class="bank-name">ВТБ</div>
         </div>
       </div>
@@ -1402,6 +1418,12 @@
       card.addEventListener('click', function(){ selectCity(card.getAttribute('data-city')); });
       card.addEventListener('keydown', function(e){
         if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectCity(card.getAttribute('data-city')); }
+      });
+    });
+    document.querySelectorAll('.bank-card').forEach(function(card){
+      card.addEventListener('click', function(){ selectCity(card.getAttribute('data-bank'), 'Ипотека'); });
+      card.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectCity(card.getAttribute('data-bank'), 'Ипотека'); }
       });
     });
   })();
