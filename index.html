@@ -549,8 +549,11 @@
   .fab-call{background:var(--green);color:#fff;}
   .fab-tg{background:#2AABEE;color:#fff;}
   .fab-vk{background:#0077FF;color:#fff;}
-  .fab-max{background:#5B48F0;overflow:hidden;}
-  .fab-max img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .fab-max{background:linear-gradient(135deg,#29B6F6,#7C4DFF);}
+  .fab-max img{width:24px;height:24px;border-radius:6px;}
+  @media (max-width:600px){
+    .fab-max img{width:20px;height:20px;}
+  }
   @media (max-width:600px){
     .floating-actions{right:14px;bottom:14px;}
     .floating-actions a{width:46px;height:46px;font-size:19px;}
