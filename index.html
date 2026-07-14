@@ -290,6 +290,13 @@
     font-size:13px;font-weight:700;color:var(--navy);
     display:inline-flex;align-items:center;gap:6px;
   }
+  .listing-plan-btn{
+    background:none;border:1.5px solid #dfe1ef;border-radius:9px;color:var(--navy);
+    font-weight:700;font-size:12.5px;padding:8px 12px;cursor:pointer;
+    display:inline-flex;align-items:center;gap:6px;align-self:flex-start;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .listing-plan-btn:hover{border-color:var(--navy);background:#f4f5fb;}
   .plans-note{margin-top:26px;color:var(--muted);font-size:14px;}
   .plans-empty{display:none;color:var(--muted);padding:30px 0;text-align:center;}
 
@@ -1582,7 +1589,7 @@
       {c:'Агаповка', a:'Юго-Западный, 53', p:8500000, plot:6, type:'дом', garage:true, finish:'', ready:false, month:'июль', hot:false, note:''},
       {c:'Агаповка', a:'Правобережная, 8/2', p:4200000, plot:1.5, type:'квартира', area:50, garage:false, finish:'', ready:true, month:'', hot:true, note:''},
       {c:'Агаповка', a:'Правобережная, 8/3', p:4200000, plot:1.5, type:'квартира', area:50, garage:false, finish:'', ready:true, month:'', hot:true, note:''},
-      {c:'Магнитогорск', a:'Рабочая, 61', p:14500000, plot:4, type:'дом', garage:false, finish:'предчистовая', ready:false, month:'июль', hot:false, note:''},
+      {c:'Магнитогорск', a:'Рабочая, 61', p:14500000, plot:4, type:'дом', area:146, garage:false, finish:'предчистовая', ready:false, month:'июль', hot:false, note:'', plans:['images/plan-mgn-rabochaya61-1.png','images/plan-mgn-rabochaya61-2.png']},
       {c:'Магнитогорск', a:'Приозёрная, 22', p:14500000, plot:4, type:'дом', garage:false, finish:'предчистовая', ready:false, month:'август', hot:false, note:''},
       {c:'Магнитогорск', a:'Приозёрная, 22/1', p:10500000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'июль', hot:false, note:''},
       {c:'Магнитогорск', a:'Приозёрная, 22/2', p:10500000, plot:4, type:'дом', garage:false, finish:'черновая', ready:false, month:'июль', hot:false, note:''},
@@ -1620,7 +1627,9 @@
       if(item.type === 'квартира'){
         specs += '<span>' + item.area + ' м²</span><span>' + item.plot + ' сот. земли</span>';
       } else {
-        specs += '<span>' + TYPE_LABEL[item.type] + '</span><span>' + item.plot + ' сот.</span>';
+        specs += '<span>' + TYPE_LABEL[item.type] + '</span>' +
+          (item.area ? '<span>' + item.area + ' м²</span>' : '') +
+          '<span>' + item.plot + ' сот.</span>';
       }
       if(item.garage) specs += '<span>🚗 Гараж</span>';
 
@@ -1650,6 +1659,7 @@
           '<div class="listing-specs">' + specs + '</div>' +
           '<div class="listing-meta">' + meta + '</div>' +
           noteHtml +
+          (item.plans ? '<button type="button" class="listing-plan-btn" data-id="' + id + '">📐 Смотреть планировку</button>' : '') +
           '<a href="#contact" class="listing-cta" data-addr="' + item.c + ', ' + item.a + '" data-price="' + fmtPrice(item.p) + '">Узнать подробнее →</a>' +
           '<label class="compare-check"><input type="checkbox" class="compare-cb" data-id="' + id + '"' + (checked ? ' checked' : '') + '><span>Сравнить</span></label>' +
         '</div>';
@@ -1683,6 +1693,13 @@
         link.addEventListener('click', function(e){
           e.preventDefault();
           if(window.selectCity) window.selectCity(link.getAttribute('data-addr') + ' — ' + link.getAttribute('data-price'), 'Объект');
+        });
+      });
+
+      grid.querySelectorAll('.listing-plan-btn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var item = LISTINGS[parseInt(btn.getAttribute('data-id'), 10)];
+          if(item && item.plans && window.openLightbox) window.openLightbox(item.plans, 0, 'Планировка — ' + item.c + ', ' + item.a);
         });
       });
 
@@ -1757,7 +1774,7 @@
 
       var rows = [
         {label:'🏠 Тип', get:function(it){ return TYPE_LABEL[it.type]; }},
-        {label:'📐 Площадь', get:function(it){ return it.type === 'квартира' ? (it.area + ' м²') : '—'; }},
+        {label:'📐 Площадь', get:function(it){ return it.area ? (it.area + ' м²') : '—'; }},
         {label:'🌳 Участок', get:function(it){ return it.plot + ' сот.'; }},
         {label:'🚗 Гараж', get:function(it){ return it.garage ? '✅ Есть' : '—'; }},
         {label:'🎨 Отделка', get:function(it){ return it.finish ? FINISH_LABEL[it.finish] : 'Чистовая'; }},
@@ -1825,27 +1842,38 @@
     var closeBtn = document.getElementById('lightboxClose');
     var prevBtn = document.getElementById('lightboxPrev');
     var nextBtn = document.getElementById('lightboxNext');
+    var gallerySources = links.map(function(link){
+      return {src: link.getAttribute('href'), alt: link.querySelector('img').alt || ''};
+    });
+    var sources = gallerySources;
     var current = 0;
 
-    function open(index){
+    function show(){
+      img.src = sources[current].src;
+      img.alt = sources[current].alt;
+    }
+    function open(list, index){
+      sources = list;
       current = index;
-      img.src = links[current].getAttribute('href');
-      img.alt = links[current].querySelector('img').alt || '';
+      show();
       lightbox.classList.add('open');
     }
     function close(){
       lightbox.classList.remove('open');
     }
     function nav(delta){
-      current = (current + delta + links.length) % links.length;
-      img.src = links[current].getAttribute('href');
-      img.alt = links[current].querySelector('img').alt || '';
+      current = (current + delta + sources.length) % sources.length;
+      show();
     }
+
+    window.openLightbox = function(srcs, index, alt){
+      open(srcs.map(function(s){ return {src: s, alt: alt || ''}; }), index || 0);
+    };
 
     links.forEach(function(link, index){
       link.addEventListener('click', function(e){
         e.preventDefault();
-        open(index);
+        open(gallerySources, index);
       });
     });
     closeBtn.addEventListener('click', close);
