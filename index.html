@@ -579,6 +579,18 @@
   .step-card h3{font-size:15px;color:var(--navy);margin-bottom:6px;}
   .step-card p{font-size:13px;color:var(--muted);}
 
+  /* MATERIALS */
+  .build-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px;margin-top:34px;}
+  .build-card{
+    background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .build-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(18,23,58,.12);}
+  .build-icon{font-size:28px;margin-bottom:10px;}
+  .build-card h3{font-size:11.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;font-weight:700;}
+  .build-value{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.3;}
+  .build-card p{font-size:13px;color:var(--muted);line-height:1.55;}
+
   /* BANK PARTNERS */
   .banks-row{
     margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;
@@ -973,6 +985,58 @@
   </div>
 </section>
 
+<section id="materials">
+  <div class="container">
+    <div class="eyebrow">Как мы строим</div>
+    <h2>Из чего сделаны наши дома</h2>
+    <p class="lead">Никаких секретов — рассказываем, из каких материалов собран каждый дом СКИМ.</p>
+    <div class="build-grid reveal-stagger">
+      <div class="build-card">
+        <div class="build-icon">🧱</div>
+        <h3>Стены</h3>
+        <div class="build-value">Шлакоблок</div>
+        <p>Тёплый, прочный и негорючий материал — крепкие стены без переплаты за кирпич</p>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">🏗️</div>
+        <h3>Фундамент</h3>
+        <div class="build-value">Ленточный</div>
+        <p>Классика малоэтажного строительства: равномерно несёт дом десятилетиями</p>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">🧥</div>
+        <h3>Утепление</h3>
+        <div class="build-value">Пенополистирол 100 мм</div>
+        <p>Дом держит тепло в уральскую зиму — счета за отопление заметно ниже</p>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">🎨</div>
+        <h3>Фасад</h3>
+        <div class="build-value">Штукатурка «короед»</div>
+        <p>Декоративная финишная отделка: аккуратный фасад, защищённый от осадков</p>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">🔥</div>
+        <h3>Отопление</h3>
+        <div class="build-value">Газовое + тёплые полы</div>
+        <p>Самое экономичное отопление в России, и полы тёплые во всём доме</p>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">🏠</div>
+        <h3>Кровля</h3>
+        <div class="build-value">Металлочерепица</div>
+        <p>Не боится уральского снега и града, служит десятилетиями</p>
+      </div>
+      <div class="build-card">
+        <div class="build-icon">🪟</div>
+        <h3>Окна</h3>
+        <div class="build-value">Пластиковые</div>
+        <p>Тепло- и шумоизоляция — никаких сквозняков и шума с улицы</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="trust" id="trust">
   <div class="container">
     <div class="eyebrow" style="color:#ff8a80">О компании</div>
@@ -1020,6 +1084,10 @@
       <details class="faq-item">
         <summary>Какие есть варианты ипотеки?</summary>
         <p>Сельская, семейная и IT-ипотека от 3% — оформляем прямо при покупке дома в Агаповке. Поможем разобраться, какая программа подходит именно вам.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Из чего вы строите дома?</summary>
+        <p>Фундамент — ленточный, стены — шлакоблок с утеплением пенополистиролом 100 мм, фасад — декоративная штукатурка «короед». Кровля — металлочерепица, окна пластиковые, отопление газовое с тёплыми полами.</p>
       </details>
       <details class="faq-item">
         <summary>Что входит в стоимость дома?</summary>
