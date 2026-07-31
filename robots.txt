@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://skim-stroy74.github.io/sitemap.xml
+Sitemap: https://skim174.ru/sitemap.xml
