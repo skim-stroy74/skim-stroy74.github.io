@@ -624,6 +624,39 @@
   .build-value{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px;line-height:1.3;}
   .build-card p{font-size:13px;color:var(--muted);line-height:1.55;}
 
+  /* TYPICAL PROJECTS */
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:24px;margin-top:34px;}
+  .project-card{
+    background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .project-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(18,23,58,.14);}
+  .project-plan{
+    background:#fff;border-bottom:1px solid #eef0f7;padding:14px;cursor:pointer;position:relative;
+  }
+  .project-plan img{width:100%;height:230px;object-fit:contain;display:block;}
+  .project-zoom{
+    position:absolute;right:16px;bottom:16px;background:rgba(18,23,58,.86);color:#fff;
+    font-size:11.5px;font-weight:700;padding:6px 11px;border-radius:20px;pointer-events:none;
+  }
+  .project-body{padding:22px;display:flex;flex-direction:column;flex:1;}
+  .project-badge{
+    display:inline-block;align-self:flex-start;background:#e9edff;color:var(--navy-2);
+    font-size:10.5px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;
+    padding:5px 10px;border-radius:20px;margin-bottom:10px;
+  }
+  .project-card h3{font-size:20px;color:var(--navy);margin-bottom:6px;}
+  .project-area{color:var(--red);font-weight:900;font-size:15px;margin-bottom:14px;}
+  .project-rooms{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
+  .project-rooms span{
+    background:var(--bg);color:var(--text);font-size:12px;font-weight:600;padding:5px 9px;border-radius:7px;
+  }
+  .project-note{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:18px;}
+  .project-card .btn{margin-top:auto;align-self:flex-start;}
+  .projects-foot{
+    margin-top:26px;color:var(--muted);font-size:13.5px;line-height:1.6;
+  }
+
   /* BANK PARTNERS */
   .banks-row{
     margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;
@@ -750,6 +783,7 @@
       <li><a href="#plans">Объекты</a></li>
       <li><a href="#mortgage">Ипотека</a></li>
       <li><a href="#process">Как купить</a></li>
+      <li><a href="#projects">Планировки</a></li>
       <li><a href="#trust">О компании</a></li>
       <li><a href="#faq">Вопросы</a></li>
       <li><a href="#gallery">Дома</a></li>
@@ -766,6 +800,7 @@
     <a href="#plans">Объекты</a>
     <a href="#mortgage">Ипотека</a>
     <a href="#process">Как купить</a>
+    <a href="#projects">Планировки</a>
     <a href="#trust">О компании</a>
     <a href="#faq">Вопросы</a>
     <a href="#gallery">Дома</a>
@@ -1067,6 +1102,85 @@
         <p>Тепло- и шумоизоляция — никаких сквозняков и шума с улицы</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="projects" style="background:#fff">
+  <div class="container">
+    <div class="eyebrow">Планировки</div>
+    <h2>Проекты наших домов</h2>
+    <p class="lead">Показываем, как дома устроены внутри. Планировки взяты из технических планов уже построенных объектов — нажмите на чертёж, чтобы рассмотреть подробнее.</p>
+
+    <div class="projects-grid reveal-stagger">
+
+      <div class="project-card">
+        <div class="project-plan" data-plans="images/plan-agapovka-kazachy52-1.png" data-label="Проект «Дом 100 м²»">
+          <img src="images/plan-agapovka-kazachy52-1.png" alt="Планировка одноэтажного дома 100 м²">
+          <span class="project-zoom">🔍 Увеличить</span>
+        </div>
+        <div class="project-body">
+          <span class="project-badge">Одноэтажный</span>
+          <h3>Дом 100 м²</h3>
+          <div class="project-area">Три спальни и большая гостиная</div>
+          <div class="project-rooms">
+            <span>Кухня-гостиная 46,7 м²</span>
+            <span>Спальня 17,4 м²</span>
+            <span>Спальня 12,4 м²</span>
+            <span>Спальня 12,4 м²</span>
+            <span>Санузел 8,4 м²</span>
+          </div>
+          <p class="project-note">Самый ходовой формат: всё на одном этаже, без лестниц. Просторная кухня-гостиная почти 47 м² — место, где собирается вся семья.</p>
+          <button type="button" class="btn btn-primary project-cta" data-project="Дом 100 м²">Хочу такой дом</button>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-plan" data-plans="images/plan-agapovka-sadovy64a-1.png" data-label="Проект «Дуплекс 125 м² с гаражом»">
+          <img src="images/plan-agapovka-sadovy64a-1.png" alt="Планировка дуплекса 125 м² с гаражом">
+          <span class="project-zoom">🔍 Увеличить</span>
+        </div>
+        <div class="project-body">
+          <span class="project-badge">С гаражом</span>
+          <h3>Дуплекс 125 м²</h3>
+          <div class="project-area">Гараж прямо в доме</div>
+          <div class="project-rooms">
+            <span>Кухня-гостиная 36,1 м²</span>
+            <span>Комната 13,4 м²</span>
+            <span>Комната 11,4 м²</span>
+            <span>Комната 11,4 м²</span>
+            <span>Холл 17,1 м²</span>
+            <span>🚗 Гараж 24 м²</span>
+          </div>
+          <p class="project-note">Гараж встроен в контур дома — зимой не нужно выходить на улицу, чтобы сесть в машину. Дом на одном этаже, отдельный вход.</p>
+          <button type="button" class="btn btn-primary project-cta" data-project="Дуплекс 125 м² с гаражом">Хочу такой дом</button>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-plan" data-plans="images/plan-mgn-rabochaya61-1.png|images/plan-mgn-rabochaya61-2.png" data-label="Проект «Двухэтажный дом 146 м²»">
+          <img src="images/plan-mgn-rabochaya61-1.png" alt="Планировка двухэтажного дома 146 м²">
+          <span class="project-zoom">🔍 Два этажа</span>
+        </div>
+        <div class="project-body">
+          <span class="project-badge">Двухэтажный</span>
+          <h3>Дом 146 м²</h3>
+          <div class="project-area">Четыре комнаты на втором этаже</div>
+          <div class="project-rooms">
+            <span>Гостиная 45,7 м²</span>
+            <span>Комната 16,4 м²</span>
+            <span>Комната 14,4 м²</span>
+            <span>Комната 14,1 м²</span>
+            <span>Комната 13,0 м²</span>
+            <span>2 санузла</span>
+          </div>
+          <p class="project-note">Для большой семьи: гостиная почти 46 м² со вторым светом на первом этаже, все спальни — на втором, отдельно от общей зоны.</p>
+          <button type="button" class="btn btn-primary project-cta" data-project="Двухэтажный дом 146 м²">Хочу такой дом</button>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="projects-foot reveal">Точные метражи и планировка зависят от конкретного объекта — уточним при заявке. Отделку внутри вы выбираете сами: двери, обои, кафель, ламинат, сантехника.</p>
   </div>
 </section>
 
@@ -1434,6 +1548,21 @@
       document.getElementById('printMonthly').textContent = document.getElementById('calcMonthly').textContent + ' / мес';
       document.getElementById('printDate').textContent = 'Сформировано ' + new Date().toLocaleDateString('ru-RU');
       window.print();
+    });
+  })();
+
+  /* TYPICAL PROJECTS */
+  (function(){
+    document.querySelectorAll('.project-plan').forEach(function(box){
+      box.addEventListener('click', function(){
+        var plans = (box.getAttribute('data-plans') || '').split('|').filter(Boolean);
+        if(plans.length && window.openLightbox) window.openLightbox(plans, 0, box.getAttribute('data-label') || '');
+      });
+    });
+    document.querySelectorAll('.project-cta').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(window.selectCity) window.selectCity(btn.getAttribute('data-project'), 'Проект');
+      });
     });
   })();
 
