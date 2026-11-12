@@ -418,7 +418,7 @@
     font-size:11px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.05em;
   }
   .listing-hot{
-    background:linear-gradient(135deg,#ff8a00,var(--red));color:#fff;font-size:10.5px;font-weight:800;
+    background:linear-gradient(135deg,#c2410c,var(--red-2));color:#fff;font-size:10.5px;font-weight:800;
     padding:3px 8px;border-radius:999px;white-space:nowrap;
   }
   .listing-addr{font-size:17px;color:var(--navy);margin-bottom:6px;line-height:1.3;}
@@ -557,7 +557,7 @@
     background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
     border-radius:var(--radius);padding:22px 20px;
   }
-  .trust-card .num{color:var(--red);font-weight:900;font-size:26px;margin-bottom:8px;}
+  .trust-card .num{color:#ff6b6b;font-weight:900;font-size:26px;margin-bottom:8px;}
   .trust-card h3{font-size:16px;margin-bottom:6px;}
   .trust-card p{font-size:13px;color:#c9cdea;}
 
@@ -776,8 +776,8 @@
     font-size:12px;line-height:1.5;cursor:pointer;user-select:none;
   }
   .consent input{width:16px;height:16px;flex-shrink:0;margin-top:1px;accent-color:var(--red);cursor:pointer;}
-  .contact-form .consent{color:#b9c0e8;}
-  .contact-form .consent a{color:#fff;text-decoration:underline;}
+  .contact-form .consent{color:var(--muted);}
+  .contact-form .consent a{color:var(--red);text-decoration:underline;}
   .mini-cta-form .consent{color:var(--muted);width:100%;}
   .mini-cta-form .consent a{color:var(--red);text-decoration:underline;}
 
@@ -862,6 +862,7 @@
     margin-bottom:8px;
   }
   .calc-row input[type=range]{width:100%;accent-color:var(--red);}
+  .calc-note{font-size:12px;color:#aab0d6;line-height:1.5;flex-basis:100%;margin-top:4px;}
   .calc-result{
     background:var(--navy);color:#fff;border-radius:var(--radius);padding:20px 22px;
     display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin:20px 0;
@@ -1212,6 +1213,7 @@
         <span>Платёж в месяц:</span>
         <b id="calcMonthly">0 ₽</b>
         <span class="calc-rate">при ставке 3%</span>
+        <div class="calc-note">Расчёт ориентировочный, без учёта комиссий и страхования. Точные условия определяет банк.</div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;">
         <a href="#contact" class="btn btn-primary">Оставить заявку на расчёт</a>
@@ -1519,16 +1521,16 @@
     <div class="reviews-wrap">
       <button class="reviews-nav reviews-prev" id="reviewsPrev" aria-label="Назад">←</button>
       <div class="reviews-scroll" id="reviewsScroll">
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Михаил Афанасьев</h4><div class="date">21 апреля 2025</div><p>Отличная компания, индивидуальный подход к каждому клиенту. Отличные условия для покупки. Качественные дома, с отличным ремонтом.</p></div>
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Е В</h4><div class="date">28 апреля 2025</div><p>Хочу выразить огромную благодарность строительной компании «СКИМ» за отличную работу! Выполнили строительство дома в срок и в соответствии со всеми пожеланиями. Особенно хочется поблагодарить Владимира и Дениса за оперативность.</p></div>
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Михаил Прокопьев</h4><div class="date">13 мая 2025</div><p>Делают дома на совесть, нет чувства что на всём экономят. Ребята живут с тобой на одной улице — это дорогого стоит.</p></div>
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Павел Климентьев</h4><div class="date">6 ноября 2025</div><p>Приобрели дом, всё пока устраивает. Ребята хорошие, если возникают вопросы — помогают решить, не отказывают.</p></div>
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Ксения Игошина</h4><div class="date">14 марта 2026</div><p>Приобрели тёплый дом с хорошим ремонтом. Огромная благодарность Денису и Владимиру за помощь на всех этапах сделки!</p></div>
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Николай Митрохин</h4><div class="date">27 мая 2024</div><p>Хочу поблагодарить Владимира и Дениса, построили отличный дом — тёплый, уютный!</p></div>
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Сонечка Кулькешева</h4><div class="date">17 апреля 2025</div><p>Приобрели отличный тёплый дом с готовым ремонтом! Застройщик даёт возможность выбрать двери, обои, кафель, ламинат, сантехнику.</p></div>
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Дмитрий Яхонтов</h4><div class="date">21 апреля 2025</div><p>Показали все этапы строительства! Предоставляют выбор материалов отделки! Дают гарантию на дом! Всегда на связи.</p></div>
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Алексей Жук</h4><div class="date">21 апреля 2025</div><p>Оперативно ответили на все вопросы, предложили несколько вариантов. Работают грамотные специалисты, показали все этапы работ.</p></div>
-        <div class="review-card"><div class="stars">★★★★★</div><h4>Михаил Прохоров</h4><div class="date">21 апреля 2025</div><p>В компании работают профессионалы своего дела! Доступ в любой стадии строительства: фото, видео, личное присутствие.</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Михаил Афанасьев</h4><div class="date">21 апреля 2025</div><p>Отличная компания, индивидуальный подход к каждому клиенту. Отличные условия для покупки. Качественные дома, с отличным ремонтом.</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Е В</h4><div class="date">28 апреля 2025</div><p>Хочу выразить огромную благодарность строительной компании «СКИМ» за отличную работу! Выполнили строительство дома в срок и в соответствии со всеми пожеланиями. Особенно хочется поблагодарить Владимира и Дениса за оперативность.</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Михаил Прокопьев</h4><div class="date">13 мая 2025</div><p>Делают дома на совесть, нет чувства что на всём экономят. Ребята живут с тобой на одной улице — это дорогого стоит.</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Павел Климентьев</h4><div class="date">6 ноября 2025</div><p>Приобрели дом, всё пока устраивает. Ребята хорошие, если возникают вопросы — помогают решить, не отказывают.</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Ксения Игошина</h4><div class="date">14 марта 2026</div><p>Приобрели тёплый дом с хорошим ремонтом. Огромная благодарность Денису и Владимиру за помощь на всех этапах сделки!</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Николай Митрохин</h4><div class="date">27 мая 2024</div><p>Хочу поблагодарить Владимира и Дениса, построили отличный дом — тёплый, уютный!</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Сонечка Кулькешева</h4><div class="date">17 апреля 2025</div><p>Приобрели отличный тёплый дом с готовым ремонтом! Застройщик даёт возможность выбрать двери, обои, кафель, ламинат, сантехнику.</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Дмитрий Яхонтов</h4><div class="date">21 апреля 2025</div><p>Показали все этапы строительства! Предоставляют выбор материалов отделки! Дают гарантию на дом! Всегда на связи.</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Алексей Жук</h4><div class="date">21 апреля 2025</div><p>Оперативно ответили на все вопросы, предложили несколько вариантов. Работают грамотные специалисты, показали все этапы работ.</p></div>
+        <div class="review-card"><div class="stars" role="img" aria-label="Оценка 5 из 5"><span aria-hidden="true">★★★★★</span></div><h4>Михаил Прохоров</h4><div class="date">21 апреля 2025</div><p>В компании работают профессионалы своего дела! Доступ в любой стадии строительства: фото, видео, личное присутствие.</p></div>
       </div>
       <button class="reviews-nav reviews-next" id="reviewsNext" aria-label="Вперёд">→</button>
     </div>
@@ -1589,7 +1591,8 @@
       <b>ООО «СКИМ»</b><br>
       Строительство · Услуги спецтехники<br>
       ИНН 0800012598 · ОГРН 1230800007008<br>
-      <a href="/privacy.html" style="text-decoration:underline">Политика обработки персональных данных</a>
+      <a href="/privacy.html" style="text-decoration:underline">Политика обработки персональных данных</a><br>
+      <a href="/terms.html" style="text-decoration:underline">Условия использования сайта</a>
     </div>
     <div class="cols">
       <div>
