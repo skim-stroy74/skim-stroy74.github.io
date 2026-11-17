@@ -826,7 +826,7 @@
   }
   .bank-card{
     background:#fff;border:1.5px solid #dfe1ef;border-radius:12px;
-    padding:14px 20px;display:flex;align-items:center;gap:13px;
+    padding:18px 26px;display:flex;align-items:center;justify-content:center;gap:13px;text-align:center;min-height:72px;
     box-shadow:0 4px 14px rgba(18,23,58,.05);
     cursor:pointer;transition:transform .5s var(--ease-out), box-shadow .5s var(--ease-out), border-color .4s ease, opacity .8s ease;
   }
@@ -840,7 +840,8 @@
   .bank-card svg{flex-shrink:0;}
   .bank-card img{flex-shrink:0;object-fit:contain;transition:transform .25s ease;}
   .bank-card:hover img, .bank-card:focus-visible img{transform:rotate(-8deg) scale(1.12);}
-  .bank-card .bank-name{font-weight:800;font-size:16px;color:var(--navy);line-height:1.25;}
+  .bank-card .bank-name{font-weight:800;font-size:16px;color:var(--navy);line-height:1.25;transition:color .3s ease;}
+  .bank-card:hover .bank-name, .bank-card:focus-visible .bank-name{color:var(--red);}
   .bank-card .bank-sub{font-size:11px;color:var(--muted);font-weight:600;}
   @media (prefers-reduced-motion: reduce){
     .bank-card{animation:none!important;}
@@ -1178,18 +1179,15 @@
       <span class="banks-label reveal">Оформляем ипотеку с банками-партнёрами — нажмите на банк, чтобы оставить заявку:</span>
       <div class="banks-list reveal-stagger">
         <div class="bank-card" data-bank="Кредит Урал Банк" role="button" tabindex="0" aria-label="Оформить ипотеку через Кредит Урал Банк">
-          <img src="images/bank-kub.png" alt="" width="36" height="36">
           <div>
             <div class="bank-name">Кредит Урал Банк</div>
             <div class="bank-sub">Группа Газпромбанка</div>
           </div>
         </div>
         <div class="bank-card" data-bank="СберБанк" role="button" tabindex="0" aria-label="Оформить ипотеку через СберБанк">
-          <img src="images/bank-sber.png" alt="" width="36" height="36">
           <div class="bank-name">СберБанк</div>
         </div>
         <div class="bank-card" data-bank="ВТБ" role="button" tabindex="0" aria-label="Оформить ипотеку через ВТБ">
-          <img src="images/bank-vtb.png" alt="" width="38" height="28">
           <div class="bank-name">ВТБ</div>
         </div>
       </div>
