@@ -218,6 +218,21 @@
     background:radial-gradient(circle,rgba(62,88,220,.32),transparent 70%);
     animation:heroGlow2 20s ease-in-out infinite;pointer-events:none;
   }
+  /* NEW YEAR SNOW (включается по дате автоматически) */
+  .snow{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;display:none;}
+  body.is-winter .snow{display:block;}
+  .snow i{
+    position:absolute;top:-8%;display:block;border-radius:50%;
+    background:#fff;opacity:0;animation:snowFall linear infinite;
+  }
+  @keyframes snowFall{
+    0%{transform:translate3d(0,0,0);opacity:0;}
+    8%{opacity:var(--o,.5);}
+    92%{opacity:var(--o,.5);}
+    100%{transform:translate3d(var(--dx,20px),115vh,0);opacity:0;}
+  }
+  @media (prefers-reduced-motion: reduce){ .snow{display:none!important;} }
+
   /* BLUEPRINT BACKGROUND */
   .blueprint{
     position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;
@@ -970,6 +985,8 @@
 </header>
 
 <section class="hero" id="hero">
+  <div class="snow" id="snow" aria-hidden="true"></div>
+
   <div class="blueprint" aria-hidden="true">
 
     <svg class="bp-a" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" stroke-width="1.1">
@@ -1892,6 +1909,33 @@
         if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); selectCity(card.getAttribute('data-bank'), 'Ипотека'); }
       });
     });
+  })();
+
+  /* NEW YEAR SNOW — с 1 декабря по 14 января, дальше выключается сам */
+  (function(){
+    var d = new Date(), m = d.getMonth(), day = d.getDate();
+    var winter = (m === 11) || (m === 0 && day <= 14);
+    if(!winter) return;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var box = document.getElementById('snow');
+    if(!box) return;
+    document.body.classList.add('is-winter');
+
+    var frag = document.createDocumentFragment();
+    for(var i = 0; i < 26; i++){
+      var f = document.createElement('i');
+      var size = (Math.random() * 3.2 + 1.8).toFixed(1);
+      f.style.width = size + 'px';
+      f.style.height = size + 'px';
+      f.style.left = (Math.random() * 100).toFixed(2) + '%';
+      f.style.setProperty('--dx', (Math.random() * 90 - 45).toFixed(0) + 'px');
+      f.style.setProperty('--o', (Math.random() * 0.35 + 0.3).toFixed(2));
+      f.style.animationDuration = (Math.random() * 11 + 13).toFixed(1) + 's';
+      f.style.animationDelay = (-Math.random() * 22).toFixed(1) + 's';
+      frag.appendChild(f);
+    }
+    box.appendChild(frag);
   })();
 
   /* READING PROGRESS */
