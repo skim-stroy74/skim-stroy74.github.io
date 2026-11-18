@@ -1914,8 +1914,11 @@
   /* NEW YEAR SNOW — с 1 декабря по 14 января, дальше выключается сам */
   (function(){
     var d = new Date(), m = d.getMonth(), day = d.getDate();
+    // основной период: 1 декабря — 14 января
     var winter = (m === 11) || (m === 0 && day <= 14);
-    if(!winter) return;
+    // показ раньше срока: действует до 30 ноября 2026, дальше истекает сам
+    var preview = d <= new Date(2026, 10, 30, 23, 59);
+    if(!winter && !preview) return;
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     var box = document.getElementById('snow');
