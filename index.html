@@ -263,6 +263,29 @@
     .garland b{width:7px;height:10px;}
   }
 
+  /* переключатель новогоднего оформления */
+  .snow-toggle{
+    position:fixed;left:16px;bottom:16px;z-index:60;display:none;
+    width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.18);
+    background:rgba(18,23,58,.82);color:#dfe4ff;cursor:pointer;
+    align-items:center;justify-content:center;font-size:17px;line-height:1;
+    box-shadow:0 6px 18px rgba(18,23,58,.3);backdrop-filter:blur(5px);
+    transition:transform .3s var(--ease-out), background .3s ease, color .3s ease;
+  }
+  body.is-winter .snow-toggle{display:flex;}
+  .snow-toggle:hover{transform:scale(1.08);background:rgba(18,23,58,.95);}
+  .snow-toggle.is-off{color:#7f87b5;}
+  .snow-toggle.is-off::after{
+    content:"";position:absolute;left:9px;right:9px;top:50%;height:1.5px;
+    background:currentColor;transform:rotate(-45deg);border-radius:2px;
+  }
+  @media (max-width:600px){
+    .snow-toggle{width:38px;height:38px;left:12px;bottom:12px;font-size:15px;}
+  }
+
+  body.snow-off .snow,
+  body.snow-off .garland{display:none!important;}
+
   @media (prefers-reduced-motion: reduce){
     .snow{display:none!important;}
     .garland b{animation:none;opacity:.85;}
@@ -1677,6 +1700,7 @@
   </div>
 </footer>
 
+<button type="button" class="snow-toggle" id="snowToggle" aria-pressed="true" title="Выключить снег">❄</button>
 <div class="garland" id="garland" aria-hidden="true"></div>
 <div class="snow" id="snow" aria-hidden="true"></div>
 <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
@@ -1959,13 +1983,19 @@
 
     document.body.classList.add('is-winter');
 
+    // пользователь мог выключить оформление раньше — уважаем выбор
+    var KEY = 'skim_snow_off';
+    var off = false;
+    try { off = localStorage.getItem(KEY) === '1'; } catch(e){}
+
     function vw(){
       return document.documentElement.clientWidth || window.innerWidth || 1280;
     }
 
-    // снег на всю страницу
+    // снег на всю страницу — создаём только когда оформление включено
     var box = document.getElementById('snow');
-    if(box){
+    function buildSnow(){
+      if(!box || box.children.length) return;
       var count = vw() > 900 ? 42 : 24;
       var frag = document.createDocumentFragment();
       for(var i = 0; i < count; i++){
@@ -1981,6 +2011,25 @@
         frag.appendChild(f);
       }
       box.appendChild(frag);
+    }
+
+    var toggle = document.getElementById('snowToggle');
+    function applyState(){
+      document.body.classList.toggle('snow-off', off);
+      if(!off){ buildSnow(); if(window.skimFillGarland) window.skimFillGarland(); }
+      if(!toggle) return;
+      toggle.classList.toggle('is-off', off);
+      toggle.setAttribute('aria-pressed', off ? 'false' : 'true');
+      toggle.title = off ? 'Включить снег' : 'Выключить снег';
+      toggle.setAttribute('aria-label', off ? 'Включить новогоднее оформление' : 'Выключить новогоднее оформление');
+    }
+
+    if(toggle){
+      toggle.addEventListener('click', function(){
+        off = !off;
+        try { localStorage.setItem(KEY, off ? '1' : '0'); } catch(e){}
+        applyState();
+      });
     }
 
     // гирлянда под шапкой — число лампочек под ширину экрана
@@ -2010,12 +2059,15 @@
         }
         g.appendChild(gf);
       }
-      fillGarland();
+      window.skimFillGarland = fillGarland;
       var t;
       window.addEventListener('resize', function(){
-        clearTimeout(t); t = setTimeout(fillGarland, 220);
+        clearTimeout(t); t = setTimeout(function(){ if(!off) fillGarland(); }, 220);
       });
     }
+
+    // применяем состояние последним — к этому моменту сборщики готовы
+    applyState();
   })();
 
   /* READING PROGRESS */
